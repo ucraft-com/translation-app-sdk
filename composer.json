@@ -1,8 +1,10 @@
 {
     "name": "ucraft-com/translation-app-sdk",
     "description": "SDK to access translations using gRPC",
+    "type": "library",
+    "license": "MIT",
     "require": {
-        "php": "^8.0.2",
+        "php": ">=8.0",
         "grpc/grpc": "^1.52",
         "ext-grpc": "*",
         "google/protobuf": "^3.17"
