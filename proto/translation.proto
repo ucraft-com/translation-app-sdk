@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package translationPackage;
+
+service Translation {
+    rpc UpdateTranslation (TranslationItem) returns (TranslationItem);
+    rpc GetTranslations (TranslationQuery) returns (TranslationItems);
+}
+
+message TranslationQuery {
+    string language_code = 1;
+    string resource = 2;
+    string resource_id = 3;
+    int32 page = 4;
+    int32 first = 5;
+}
+
+message TranslationItem {
+    int32 id = 1;
+    string key = 2;
+    string value = 3;
+    string language_code = 4;
+    string resource = 5;
+    string resource_id = 6;
+    string created_at = 7;
+    map<string, string> params = 8;
+}
+
+message TranslationItems {
+    repeated TranslationItem items = 1;
+}
