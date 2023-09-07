@@ -19,5 +19,6 @@
             "name": "miqayelsrapionyan",
             "email": "miqayel@ucraft.com"
         }
-    ]
+    ],
+    "minimum-stability": "dev"
 }
