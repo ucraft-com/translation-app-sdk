@@ -13,6 +13,8 @@ message TranslationQuery {
     string resource_id = 3;
     int32 page = 4;
     int32 first = 5;
+    string key = 6;
+    OrderBy order_by = 7;
 }
 
 message TranslationItem {
@@ -22,10 +24,18 @@ message TranslationItem {
     string language_code = 4;
     string resource = 5;
     string resource_id = 6;
-    string created_at = 7;
-    map<string, string> params = 8;
+    string editor = 7;
+    string created_at = 8;
+    string updated_at = 9;
+    map<string, string> params = 10;
+}
+
+message OrderBy {
+    string column = 1;
+    string order = 2;
 }
 
 message TranslationItems {
     repeated TranslationItem items = 1;
+    int32 total = 2;
 }

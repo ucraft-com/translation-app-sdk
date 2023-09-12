@@ -33,6 +33,14 @@ class TranslationQuery extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int32 first = 5;</code>
      */
     protected $first = 0;
+    /**
+     * Generated from protobuf field <code>string key = 6;</code>
+     */
+    protected $key = '';
+    /**
+     * Generated from protobuf field <code>.translationPackage.OrderBy order_by = 7;</code>
+     */
+    protected $order_by = null;
 
     /**
      * Constructor.
@@ -45,6 +53,8 @@ class TranslationQuery extends \Google\Protobuf\Internal\Message
      *     @type string $resource_id
      *     @type int $page
      *     @type int $first
+     *     @type string $key
+     *     @type \TranslationPackage\OrderBy $order_by
      * }
      */
     public function __construct($data = NULL) {
@@ -158,6 +168,50 @@ class TranslationQuery extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->first = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string key = 6;</code>
+     * @return string
+     */
+    public function getKey()
+    {
+        return $this->key;
+    }
+
+    /**
+     * Generated from protobuf field <code>string key = 6;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setKey($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->key = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.translationPackage.OrderBy order_by = 7;</code>
+     * @return \TranslationPackage\OrderBy
+     */
+    public function getOrderBy()
+    {
+        return $this->order_by;
+    }
+
+    /**
+     * Generated from protobuf field <code>.translationPackage.OrderBy order_by = 7;</code>
+     * @param \TranslationPackage\OrderBy $var
+     * @return $this
+     */
+    public function setOrderBy($var)
+    {
+        GPBUtil::checkMessage($var, \TranslationPackage\OrderBy::class);
+        $this->order_by = $var;
 
         return $this;
     }

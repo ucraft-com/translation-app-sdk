@@ -38,11 +38,19 @@ class TranslationItem extends \Google\Protobuf\Internal\Message
      */
     protected $resource_id = '';
     /**
-     * Generated from protobuf field <code>string created_at = 7;</code>
+     * Generated from protobuf field <code>string editor = 7;</code>
+     */
+    protected $editor = '';
+    /**
+     * Generated from protobuf field <code>string created_at = 8;</code>
      */
     protected $created_at = '';
     /**
-     * Generated from protobuf field <code>map<string, string> params = 8;</code>
+     * Generated from protobuf field <code>string updated_at = 9;</code>
+     */
+    protected $updated_at = '';
+    /**
+     * Generated from protobuf field <code>map<string, string> params = 10;</code>
      */
     private $params;
 
@@ -58,7 +66,9 @@ class TranslationItem extends \Google\Protobuf\Internal\Message
      *     @type string $language_code
      *     @type string $resource
      *     @type string $resource_id
+     *     @type string $editor
      *     @type string $created_at
+     *     @type string $updated_at
      *     @type array|\Google\Protobuf\Internal\MapField $params
      * }
      */
@@ -200,7 +210,29 @@ class TranslationItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string created_at = 7;</code>
+     * Generated from protobuf field <code>string editor = 7;</code>
+     * @return string
+     */
+    public function getEditor()
+    {
+        return $this->editor;
+    }
+
+    /**
+     * Generated from protobuf field <code>string editor = 7;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setEditor($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->editor = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string created_at = 8;</code>
      * @return string
      */
     public function getCreatedAt()
@@ -209,7 +241,7 @@ class TranslationItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string created_at = 7;</code>
+     * Generated from protobuf field <code>string created_at = 8;</code>
      * @param string $var
      * @return $this
      */
@@ -222,7 +254,29 @@ class TranslationItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>map<string, string> params = 8;</code>
+     * Generated from protobuf field <code>string updated_at = 9;</code>
+     * @return string
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updated_at;
+    }
+
+    /**
+     * Generated from protobuf field <code>string updated_at = 9;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUpdatedAt($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->updated_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>map<string, string> params = 10;</code>
      * @return \Google\Protobuf\Internal\MapField
      */
     public function getParams()
@@ -231,7 +285,7 @@ class TranslationItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>map<string, string> params = 8;</code>
+     * Generated from protobuf field <code>map<string, string> params = 10;</code>
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */

@@ -10,9 +10,27 @@ class TranslationQueryValueObject
         protected readonly int $resourceId,
         protected readonly string $languageCode,
         protected readonly string $resource,
+        protected readonly string $key,
+        protected readonly array $orderBy = [],
         protected readonly int $page = 0,
         protected readonly int $first = 10,
     ){
+    }
+
+    /**
+     * @return array
+     */
+    public function getOrderBy(): array
+    {
+        return $this->orderBy;
+    }
+
+    /**
+     * @return string
+     */
+    public function getKey(): string
+    {
+        return $this->key;
     }
 
     /**

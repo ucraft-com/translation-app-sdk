@@ -11,12 +11,30 @@ class TranslationItemValueObject
         protected readonly string $value,
         protected readonly string $languageCode,
         protected readonly string $createdAt,
+        protected readonly string $updatedAt,
         protected readonly string $resource,
         protected readonly int $resourceId,
+        protected readonly string $editor,
         protected readonly ?int $id,
         protected readonly ?array $params,
     )
     {
+    }
+
+    /**
+     * @return string
+     */
+    public function getUpdatedAt(): string
+    {
+        return $this->updatedAt;
+    }
+
+    /**
+     * @return string
+     */
+    public function getEditor(): string
+    {
+        return $this->editor;
     }
 
     /**

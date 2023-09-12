@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace Uc\TranslationAppSdk;
 
+use TranslationPackage\OrderBy;
+use Uc\TranslationAppSdk\Enums\ColumnEnum;
+use Uc\TranslationAppSdk\Enums\OrderByEnum;
 use Uc\TranslationAppSdk\ValueObjects\TranslationItemValueObject;
 use Uc\TranslationAppSdk\ValueObjects\TranslationQueryValueObject;
 use TranslationPackage\TranslationClient;
@@ -14,7 +17,6 @@ class TranslationAppClient
 {
     public function __construct(protected TranslationClient $client)
     {
-
     }
 
     /**
@@ -30,12 +32,19 @@ class TranslationAppClient
         $request->setResourceId($valueObject->getResourceId());
         $request->setLanguageCode($valueObject->getLanguageCode());
         $request->setResource($valueObject->getResource());
+        $request->setKey($valueObject->getKey());
         $request->setPage($valueObject->getPage());
         $request->setFirst($valueObject->getFirst());
 
+        if ($inputOrder = $valueObject->getOrderBy()) {
+            $orderBy = new OrderBy();
+            $orderBy->setColumn(ColumnEnum::tryFrom($inputOrder['column'])->value);
+            $orderBy->setOrder(OrderByEnum::tryFrom($inputOrder['order'])->value);
+        }
+
         [$data, $metadata] = $this->client->getTranslations($request)->wait();
 
-        return ['data' => $data?->getItems(), 'metadata' => $metadata];
+        return ['data' => $data?->getItems(), 'total' => $data?->getTotal(), 'metadata' => $metadata];
     }
 
     /**
@@ -57,6 +66,8 @@ class TranslationAppClient
         $data->setKey($valueObject->getKey());
         $data->setValue($valueObject->getValue());
         $data->setCreatedAt($valueObject->getCreatedAt());
+        $data->setUpdatedAt($valueObject->getUpdatedAt());
+        $data->setEditor($valueObject->getEditor());
         $data->setResource($valueObject->getResource());
         $data->setResourceId($valueObject->getResourceId());
         $data->setLanguageCode($valueObject->getLanguageCode());
@@ -70,6 +81,8 @@ class TranslationAppClient
                 'key'          => $data->getKey(),
                 'value'        => $data->getValue(),
                 'createdAt'    => $data->getCreatedAt(),
+                'updatedAt'    => $data->getUpdatedAt(),
+                'editor'       => $data->getEditor(),
                 'resource'     => $data->getResource(),
                 'resourceId'   => $data->getResourceId(),
                 'params'       => $data->getParams(),
