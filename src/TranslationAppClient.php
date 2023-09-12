@@ -44,7 +44,25 @@ class TranslationAppClient
 
         [$data, $metadata] = $this->client->getTranslations($request)->wait();
 
-        return ['data' => $data?->getItems(), 'total' => $data?->getTotal(), 'metadata' => $metadata];
+        $processedData = [];
+
+        if ($data) {
+            /** @var TranslationItem $translationItem */
+            foreach ($data as $translationItem) {
+                $processedData[] = [
+                    'id'           => $translationItem->getId(),
+                    'key'          => $translationItem->getKey(),
+                    'value'        => $translationItem->getValue(),
+                    'createdAt'    => $translationItem->getCreatedAt(),
+                    'updatedAt'    => $translationItem->getUpdatedAt(),
+                    'editor'       => $translationItem->getEditor(),
+                    'params'       => $translationItem->getParams(),
+                    'languageCode' => $translationItem->getLanguageCode(),
+                ];
+            }
+        }
+
+        return ['data' => $processedData, 'total' => $data?->getTotal(), 'metadata' => $metadata];
     }
 
     /**
@@ -57,12 +75,15 @@ class TranslationAppClient
     public function updateOrCreate(TranslationItemValueObject $valueObject): array
     {
         $data = new TranslationItem();
+
         if ($valueObject->hasId()) {
             $data->setId($valueObject->getId());
         }
+
         if ($valueObject->hasParams()) {
             $data->setParams($valueObject->getParams());
         }
+
         $data->setKey($valueObject->getKey());
         $data->setValue($valueObject->getValue());
         $data->setCreatedAt($valueObject->getCreatedAt());
