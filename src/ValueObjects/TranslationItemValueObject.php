@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace Uc\TranslationAppSdk\ValueObjects;
 
-readonly class TranslationItemValueObject
+class TranslationItemValueObject
 {
     public function __construct(
-        protected string $key,
-        protected string $value,
-        protected string $languageCode,
-        protected string $updatedAt,
-        protected string $resource,
-        protected int $resourceId,
-        protected string $editor,
-        protected int $id,
-        protected ?array $params,
+        protected readonly string $key,
+        protected readonly string $value,
+        protected readonly string $languageCode,
+        protected readonly string $updatedAt,
+        protected readonly string $resource,
+        protected readonly int $resourceId,
+        protected readonly string $editor,
+        protected readonly int $id,
+        protected readonly ?array $params,
     )
     {
     }

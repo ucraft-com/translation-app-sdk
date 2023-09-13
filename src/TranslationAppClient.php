@@ -61,7 +61,7 @@ class TranslationAppClient
             }
         }
 
-        return ['data' => $processedData, 'total' => $data?->getTotal(), 'metadata' => $metadata];
+        return ['data' => $processedData, 'total' => $data?->getTotal() ?? 0, 'metadata' => $metadata];
     }
 
     /**
