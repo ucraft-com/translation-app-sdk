@@ -48,7 +48,7 @@ class TranslationAppClient
 
         if ($data) {
             /** @var TranslationItem $translationItem */
-            foreach ($data as $translationItem) {
+            foreach ($data->getItems() as $translationItem) {
                 $processedData[] = [
                     'id'           => $translationItem->getId(),
                     'key'          => $translationItem->getKey(),
