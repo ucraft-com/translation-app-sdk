@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace Uc\TranslationAppSdk\ValueObjects;
 
-class TranslationQueryValueObject
+readonly class TranslationQueryValueObject
 {
     public function __construct(
-        protected readonly int $resourceId,
-        protected readonly string $languageCode,
-        protected readonly string $resource,
-        protected readonly ?string $key = null,
-        protected readonly array $orderBy = [],
-        protected readonly int $page = 0,
-        protected readonly int $first = 10,
+        protected int $resourceId,
+        protected string $languageCode,
+        protected string $resource,
+        protected ?string $key = null,
+        protected array $orderBy = [],
+        protected int $page = 0,
+        protected int $first = 10,
     ){
     }
 

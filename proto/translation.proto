@@ -25,9 +25,8 @@ message TranslationItem {
     string resource = 5;
     string resource_id = 6;
     string editor = 7;
-    string created_at = 8;
-    string updated_at = 9;
-    map<string, string> params = 10;
+    string updated_at = 8;
+    map<string, string> params = 9;
 }
 
 message OrderBy {

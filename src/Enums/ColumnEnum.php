@@ -7,5 +7,5 @@ namespace Uc\TranslationAppSdk\Enums;
 enum ColumnEnum: string
 {
     case KEY = 'key';
-    case CREATED_AT = 'created_at';
+    case UPDATED_AT = 'updated_at';
 }

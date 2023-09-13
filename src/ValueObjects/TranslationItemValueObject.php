@@ -4,19 +4,18 @@ declare(strict_types=1);
 
 namespace Uc\TranslationAppSdk\ValueObjects;
 
-class TranslationItemValueObject
+readonly class TranslationItemValueObject
 {
     public function __construct(
-        protected readonly string $key,
-        protected readonly string $value,
-        protected readonly string $languageCode,
-        protected readonly string $createdAt,
-        protected readonly string $updatedAt,
-        protected readonly string $resource,
-        protected readonly int $resourceId,
-        protected readonly string $editor,
-        protected readonly ?int $id,
-        protected readonly ?array $params,
+        protected string $key,
+        protected string $value,
+        protected string $languageCode,
+        protected string $updatedAt,
+        protected string $resource,
+        protected int $resourceId,
+        protected string $editor,
+        protected int $id,
+        protected ?array $params,
     )
     {
     }
@@ -64,14 +63,6 @@ class TranslationItemValueObject
     /**
      * @return string
      */
-    public function getCreatedAt(): string
-    {
-        return $this->createdAt;
-    }
-
-    /**
-     * @return string
-     */
     public function getResource(): string
     {
         return $this->resource;
@@ -86,19 +77,11 @@ class TranslationItemValueObject
     }
 
     /**
-     * @return int|null
+     * @return int
      */
-    public function getId(): ?int
+    public function getId(): int
     {
         return $this->id;
-    }
-
-    /**
-     * @return bool
-     */
-    public function hasId(): bool
-    {
-        return !empty($this->getId());
     }
 
     /**

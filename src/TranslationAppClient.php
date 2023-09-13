@@ -53,7 +53,6 @@ class TranslationAppClient
                     'id'           => $translationItem->getId(),
                     'key'          => $translationItem->getKey(),
                     'value'        => $translationItem->getValue(),
-                    'createdAt'    => $translationItem->getCreatedAt(),
                     'updatedAt'    => $translationItem->getUpdatedAt(),
                     'editor'       => $translationItem->getEditor(),
                     'params'       => $translationItem->getParams(),
@@ -66,27 +65,23 @@ class TranslationAppClient
     }
 
     /**
-     * Update translation if id exists, or create new one.
+     * Update translation by id.
      *
      * @param \Uc\TranslationAppSdk\ValueObjects\TranslationItemValueObject $valueObject
      *
      * @return array
      */
-    public function updateOrCreate(TranslationItemValueObject $valueObject): array
+    public function update(TranslationItemValueObject $valueObject): array
     {
         $data = new TranslationItem();
-
-        if ($valueObject->hasId()) {
-            $data->setId($valueObject->getId());
-        }
 
         if ($valueObject->hasParams()) {
             $data->setParams($valueObject->getParams());
         }
 
+        $data->setId($valueObject->getId());
         $data->setKey($valueObject->getKey());
         $data->setValue($valueObject->getValue());
-        $data->setCreatedAt($valueObject->getCreatedAt());
         $data->setUpdatedAt($valueObject->getUpdatedAt());
         $data->setEditor($valueObject->getEditor());
         $data->setResource($valueObject->getResource());
@@ -101,7 +96,6 @@ class TranslationAppClient
                 'id'           => $data->getId(),
                 'key'          => $data->getKey(),
                 'value'        => $data->getValue(),
-                'createdAt'    => $data->getCreatedAt(),
                 'updatedAt'    => $data->getUpdatedAt(),
                 'editor'       => $data->getEditor(),
                 'resource'     => $data->getResource(),
