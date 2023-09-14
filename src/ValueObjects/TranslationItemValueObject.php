@@ -7,7 +7,6 @@ namespace Uc\TranslationAppSdk\ValueObjects;
 class TranslationItemValueObject
 {
     public function __construct(
-        protected readonly string $key,
         protected readonly string $value,
         protected readonly string $languageCode,
         protected readonly string $updatedAt,
@@ -40,14 +39,6 @@ class TranslationItemValueObject
     public function getEditor(): string
     {
         return $this->editor;
-    }
-
-    /**
-     * @return string
-     */
-    public function getKey(): string
-    {
-        return $this->key;
     }
 
     /**
