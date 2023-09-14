@@ -21,10 +21,10 @@ message TranslationItem {
     int32 id = 1;
     string key = 2;
     string value = 3;
-    string language_code = 4;
-    string resource = 5;
-    string resource_id = 6;
-    string editor = 7;
+    string default_value = 4;
+    string language_code = 5;
+    string editor = 6;
+    int32 translation_entry_id = 7;
     string updated_at = 8;
     map<string, string> params = 9;
 }

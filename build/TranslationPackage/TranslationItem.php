@@ -26,21 +26,21 @@ class TranslationItem extends \Google\Protobuf\Internal\Message
      */
     protected $value = '';
     /**
-     * Generated from protobuf field <code>string language_code = 4;</code>
+     * Generated from protobuf field <code>string default_value = 4;</code>
+     */
+    protected $default_value = '';
+    /**
+     * Generated from protobuf field <code>string language_code = 5;</code>
      */
     protected $language_code = '';
     /**
-     * Generated from protobuf field <code>string resource = 5;</code>
-     */
-    protected $resource = '';
-    /**
-     * Generated from protobuf field <code>string resource_id = 6;</code>
-     */
-    protected $resource_id = '';
-    /**
-     * Generated from protobuf field <code>string editor = 7;</code>
+     * Generated from protobuf field <code>string editor = 6;</code>
      */
     protected $editor = '';
+    /**
+     * Generated from protobuf field <code>int32 translation_entry_id = 7;</code>
+     */
+    protected $translation_entry_id = 0;
     /**
      * Generated from protobuf field <code>string updated_at = 8;</code>
      */
@@ -59,10 +59,10 @@ class TranslationItem extends \Google\Protobuf\Internal\Message
      *     @type int $id
      *     @type string $key
      *     @type string $value
+     *     @type string $default_value
      *     @type string $language_code
-     *     @type string $resource
-     *     @type string $resource_id
      *     @type string $editor
+     *     @type int $translation_entry_id
      *     @type string $updated_at
      *     @type array|\Google\Protobuf\Internal\MapField $params
      * }
@@ -139,7 +139,29 @@ class TranslationItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string language_code = 4;</code>
+     * Generated from protobuf field <code>string default_value = 4;</code>
+     * @return string
+     */
+    public function getDefaultValue()
+    {
+        return $this->default_value;
+    }
+
+    /**
+     * Generated from protobuf field <code>string default_value = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDefaultValue($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->default_value = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string language_code = 5;</code>
      * @return string
      */
     public function getLanguageCode()
@@ -148,7 +170,7 @@ class TranslationItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string language_code = 4;</code>
+     * Generated from protobuf field <code>string language_code = 5;</code>
      * @param string $var
      * @return $this
      */
@@ -161,51 +183,7 @@ class TranslationItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string resource = 5;</code>
-     * @return string
-     */
-    public function getResource()
-    {
-        return $this->resource;
-    }
-
-    /**
-     * Generated from protobuf field <code>string resource = 5;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setResource($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->resource = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string resource_id = 6;</code>
-     * @return string
-     */
-    public function getResourceId()
-    {
-        return $this->resource_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string resource_id = 6;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setResourceId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->resource_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string editor = 7;</code>
+     * Generated from protobuf field <code>string editor = 6;</code>
      * @return string
      */
     public function getEditor()
@@ -214,7 +192,7 @@ class TranslationItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string editor = 7;</code>
+     * Generated from protobuf field <code>string editor = 6;</code>
      * @param string $var
      * @return $this
      */
@@ -222,6 +200,28 @@ class TranslationItem extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->editor = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 translation_entry_id = 7;</code>
+     * @return int
+     */
+    public function getTranslationEntryId()
+    {
+        return $this->translation_entry_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 translation_entry_id = 7;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setTranslationEntryId($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->translation_entry_id = $var;
 
         return $this;
     }

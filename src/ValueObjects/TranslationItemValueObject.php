@@ -11,13 +11,19 @@ class TranslationItemValueObject
         protected readonly string $value,
         protected readonly string $languageCode,
         protected readonly string $updatedAt,
-        protected readonly string $resource,
-        protected readonly int $resourceId,
+        protected readonly string $translationEntryId,
         protected readonly string $editor,
-        protected readonly int $id,
+        protected readonly ?int $id,
         protected readonly ?array $params,
-    )
+    ) {
+    }
+
+    /**
+     * @return string
+     */
+    public function getTranslationEntryId(): string
     {
+        return $this->translationEntryId;
     }
 
     /**
@@ -61,25 +67,17 @@ class TranslationItemValueObject
     }
 
     /**
-     * @return string
+     * @return bool
      */
-    public function getResource(): string
+    public function hasId(): bool
     {
-        return $this->resource;
+        return !empty($this->getId());
     }
 
     /**
-     * @return int
+     * @return int|null
      */
-    public function getResourceId(): int
-    {
-        return $this->resourceId;
-    }
-
-    /**
-     * @return int
-     */
-    public function getId(): int
+    public function getId(): ?int
     {
         return $this->id;
     }

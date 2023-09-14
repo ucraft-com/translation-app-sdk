@@ -50,13 +50,15 @@ class TranslationAppClient
             /** @var TranslationItem $translationItem */
             foreach ($data->getItems() as $translationItem) {
                 $processedData[] = [
-                    'id'           => $translationItem->getId(),
-                    'key'          => $translationItem->getKey(),
-                    'value'        => $translationItem->getValue(),
-                    'updatedAt'    => $translationItem->getUpdatedAt(),
-                    'editor'       => $translationItem->getEditor(),
-                    'params'       => $translationItem->getParams(),
-                    'languageCode' => $translationItem->getLanguageCode(),
+                    'id'                 => $translationItem->getId(),
+                    'key'                => $translationItem->getKey(),
+                    'value'              => $translationItem->getValue(),
+                    'defaultValue'       => $translationItem->getDefaultValue(),
+                    'updatedAt'          => $translationItem->getUpdatedAt(),
+                    'editor'             => $translationItem->getEditor(),
+                    'params'             => $translationItem->getParams(),
+                    'languageCode'       => $translationItem->getLanguageCode(),
+                    'translationEntryId' => $translationItem->getTranslationEntryId(),
                 ];
             }
         }
@@ -65,28 +67,29 @@ class TranslationAppClient
     }
 
     /**
-     * Update translation by id.
+     * Update translation if id exists, or create new one.
      *
      * @param \Uc\TranslationAppSdk\ValueObjects\TranslationItemValueObject $valueObject
      *
      * @return array
      */
-    public function update(TranslationItemValueObject $valueObject): array
+    public function updateOrCreate(TranslationItemValueObject $valueObject): array
     {
         $data = new TranslationItem();
+
+        if ($valueObject->hasId()) {
+            $data->setId($valueObject->getId());
+        }
 
         if ($valueObject->hasParams()) {
             $data->setParams($valueObject->getParams());
         }
 
-        $data->setId($valueObject->getId());
-        $data->setKey($valueObject->getKey());
         $data->setValue($valueObject->getValue());
         $data->setUpdatedAt($valueObject->getUpdatedAt());
         $data->setEditor($valueObject->getEditor());
-        $data->setResource($valueObject->getResource());
-        $data->setResourceId($valueObject->getResourceId());
         $data->setLanguageCode($valueObject->getLanguageCode());
+        $data->setTranslationEntryId($valueObject->getTranslationEntryId());
 
         [$data, $metadata] = $this->client->UpdateTranslation($data)->wait();
         $processedData = null;
@@ -94,12 +97,9 @@ class TranslationAppClient
         if ($data) {
             $processedData = [
                 'id'           => $data->getId(),
-                'key'          => $data->getKey(),
                 'value'        => $data->getValue(),
                 'updatedAt'    => $data->getUpdatedAt(),
                 'editor'       => $data->getEditor(),
-                'resource'     => $data->getResource(),
-                'resourceId'   => $data->getResourceId(),
                 'params'       => $data->getParams(),
                 'languageCode' => $data->getLanguageCode(),
             ];
