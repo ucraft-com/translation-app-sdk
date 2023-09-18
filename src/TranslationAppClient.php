@@ -30,8 +30,8 @@ class TranslationAppClient
     {
         $request = new TranslationQuery();
         $request->setResourceId($valueObject->getResourceId());
-        $request->setLanguageCode($valueObject->getLanguageCode());
         $request->setResource($valueObject->getResource());
+        $request->setLanguageCode($valueObject->getLanguageCode());
         $request->setKey($valueObject->getKey());
         $request->setPage($valueObject->getPage());
         $request->setFirst($valueObject->getFirst());
@@ -89,6 +89,8 @@ class TranslationAppClient
         $data->setUpdatedAt($valueObject->getUpdatedAt());
         $data->setEditor($valueObject->getEditor());
         $data->setLanguageCode($valueObject->getLanguageCode());
+        $data->setResource($valueObject->getResource());
+        $data->setResourceId($valueObject->getResourceId());
         $data->setTranslationEntryId($valueObject->getTranslationEntryId());
 
         [$data, $metadata] = $this->client->UpdateTranslation($data)->wait();

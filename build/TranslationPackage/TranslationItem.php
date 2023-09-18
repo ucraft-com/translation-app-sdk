@@ -42,11 +42,19 @@ class TranslationItem extends \Google\Protobuf\Internal\Message
      */
     protected $translation_entry_id = 0;
     /**
-     * Generated from protobuf field <code>string updated_at = 8;</code>
+     * Generated from protobuf field <code>string resource = 8;</code>
+     */
+    protected $resource = '';
+    /**
+     * Generated from protobuf field <code>int32 resource_id = 9;</code>
+     */
+    protected $resource_id = 0;
+    /**
+     * Generated from protobuf field <code>string updated_at = 10;</code>
      */
     protected $updated_at = '';
     /**
-     * Generated from protobuf field <code>map<string, string> params = 9;</code>
+     * Generated from protobuf field <code>map<string, string> params = 11;</code>
      */
     private $params;
 
@@ -63,6 +71,8 @@ class TranslationItem extends \Google\Protobuf\Internal\Message
      *     @type string $language_code
      *     @type string $editor
      *     @type int $translation_entry_id
+     *     @type string $resource
+     *     @type int $resource_id
      *     @type string $updated_at
      *     @type array|\Google\Protobuf\Internal\MapField $params
      * }
@@ -227,7 +237,51 @@ class TranslationItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string updated_at = 8;</code>
+     * Generated from protobuf field <code>string resource = 8;</code>
+     * @return string
+     */
+    public function getResource()
+    {
+        return $this->resource;
+    }
+
+    /**
+     * Generated from protobuf field <code>string resource = 8;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setResource($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->resource = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 resource_id = 9;</code>
+     * @return int
+     */
+    public function getResourceId()
+    {
+        return $this->resource_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 resource_id = 9;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setResourceId($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->resource_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string updated_at = 10;</code>
      * @return string
      */
     public function getUpdatedAt()
@@ -236,7 +290,7 @@ class TranslationItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string updated_at = 8;</code>
+     * Generated from protobuf field <code>string updated_at = 10;</code>
      * @param string $var
      * @return $this
      */
@@ -249,7 +303,7 @@ class TranslationItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>map<string, string> params = 9;</code>
+     * Generated from protobuf field <code>map<string, string> params = 11;</code>
      * @return \Google\Protobuf\Internal\MapField
      */
     public function getParams()
@@ -258,7 +312,7 @@ class TranslationItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>map<string, string> params = 9;</code>
+     * Generated from protobuf field <code>map<string, string> params = 11;</code>
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */

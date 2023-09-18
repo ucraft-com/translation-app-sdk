@@ -7,9 +7,9 @@ namespace Uc\TranslationAppSdk\ValueObjects;
 class TranslationQueryValueObject
 {
     public function __construct(
+        protected readonly string $resource,
         protected readonly int $resourceId,
         protected readonly string $languageCode,
-        protected readonly string $resource,
         protected readonly ?string $key = null,
         protected readonly array $orderBy = [],
         protected readonly int $page = 0,

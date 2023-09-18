@@ -11,10 +11,28 @@ class TranslationItemValueObject
         protected readonly string $languageCode,
         protected readonly string $updatedAt,
         protected readonly string $translationEntryId,
+        protected readonly string $resource,
+        protected readonly int $resourceId,
         protected readonly string $editor,
         protected readonly ?int $id,
         protected readonly ?array $params,
     ) {
+    }
+
+    /**
+     * @return string
+     */
+    public function getResource(): string
+    {
+        return $this->resource;
+    }
+
+    /**
+     * @return int
+     */
+    public function getResourceId(): int
+    {
+        return $this->resourceId;
     }
 
     /**
