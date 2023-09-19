@@ -40,6 +40,7 @@ class TranslationAppClient
             $orderBy = new OrderBy();
             $orderBy->setColumn(ColumnEnum::tryFrom($inputOrder['column'])->value);
             $orderBy->setOrder(OrderByEnum::tryFrom($inputOrder['order'])->value);
+            $request->setOrderBy($orderBy);
         }
 
         [$data, $metadata] = $this->client->getTranslations($request)->wait();
