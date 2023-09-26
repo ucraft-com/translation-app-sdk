@@ -14,7 +14,7 @@ class TranslationItemValueObject
         protected readonly string $resource,
         protected readonly int $resourceId,
         protected readonly string $editor,
-        protected readonly ?int $id,
+        protected readonly ?int $translationId,
         protected readonly ?array $params,
     ) {
     }
@@ -78,17 +78,17 @@ class TranslationItemValueObject
     /**
      * @return bool
      */
-    public function hasId(): bool
+    public function hasTranslationId(): bool
     {
-        return !empty($this->getId());
+        return !empty($this->getTranslationId());
     }
 
     /**
      * @return int|null
      */
-    public function getId(): ?int
+    public function getTranslationId(): ?int
     {
-        return $this->id;
+        return $this->translationId;
     }
 
     /**

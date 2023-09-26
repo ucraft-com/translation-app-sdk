@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class TranslationItem extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>int32 id = 1;</code>
+     * Generated from protobuf field <code>int32 translation_id = 1;</code>
      */
-    protected $id = 0;
+    protected $translation_id = 0;
     /**
      * Generated from protobuf field <code>string key = 2;</code>
      */
@@ -64,7 +64,7 @@ class TranslationItem extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $id
+     *     @type int $translation_id
      *     @type string $key
      *     @type string $value
      *     @type string $default_value
@@ -83,23 +83,23 @@ class TranslationItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 id = 1;</code>
+     * Generated from protobuf field <code>int32 translation_id = 1;</code>
      * @return int
      */
-    public function getId()
+    public function getTranslationId()
     {
-        return $this->id;
+        return $this->translation_id;
     }
 
     /**
-     * Generated from protobuf field <code>int32 id = 1;</code>
+     * Generated from protobuf field <code>int32 translation_id = 1;</code>
      * @param int $var
      * @return $this
      */
-    public function setId($var)
+    public function setTranslationId($var)
     {
         GPBUtil::checkInt32($var);
-        $this->id = $var;
+        $this->translation_id = $var;
 
         return $this;
     }

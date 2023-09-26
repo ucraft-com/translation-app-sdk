@@ -78,8 +78,8 @@ class TranslationAppClient
     {
         $data = new TranslationItem();
 
-        if ($valueObject->hasId()) {
-            $data->setId($valueObject->getId());
+        if ($valueObject->hasTranslationId()) {
+            $data->setTranslationId($valueObject->getTranslationId());
         }
 
         if ($valueObject->hasParams()) {
@@ -99,12 +99,13 @@ class TranslationAppClient
 
         if ($data) {
             $processedData = [
-                'id'           => $data->getId(),
-                'value'        => $data->getValue(),
-                'updatedAt'    => $data->getUpdatedAt(),
-                'editor'       => $data->getEditor(),
-                'params'       => $data->getParams(),
-                'languageCode' => $data->getLanguageCode(),
+                'translationEntryId' => $data->getId(),
+                'value'              => $data->getValue(),
+                'updatedAt'          => $data->getUpdatedAt(),
+                'editor'             => $data->getEditor(),
+                'params'             => $data->getParams(),
+                'languageCode'       => $data->getLanguageCode(),
+                'translationId'      => $data->getTranslationId()
             ];
         }
 
