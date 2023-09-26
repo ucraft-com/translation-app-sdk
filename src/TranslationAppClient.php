@@ -99,7 +99,7 @@ class TranslationAppClient
 
         if ($data) {
             $processedData = [
-                'translationEntryId' => $data->getId(),
+                'translationEntryId' => $data->getTranslationEntryId(),
                 'value'              => $data->getValue(),
                 'updatedAt'          => $data->getUpdatedAt(),
                 'editor'             => $data->getEditor(),
