@@ -1,4 +1,5 @@
 syntax = "proto3";
+import "google/protobuf/wrappers.proto";
 
 package translationPackage;
 
@@ -18,7 +19,7 @@ message TranslationQuery {
 }
 
 message TranslationItem {
-    int32 translation_id = 1;
+    google.protobuf.Int32Value translation_id = 1;
     string key = 2;
     string value = 3;
     string default_value = 4;
