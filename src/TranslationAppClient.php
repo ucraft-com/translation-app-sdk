@@ -51,7 +51,7 @@ class TranslationAppClient
             /** @var TranslationItem $translationItem */
             foreach ($data->getItems() as $translationItem) {
                 $processedData[] = [
-                    'translationId'      => $translationItem->getTranslationId(),
+                    'translationId'      => $translationItem->getTranslationId()?->getValue(),
                     'key'                => $translationItem->getKey(),
                     'value'              => $translationItem->getValue(),
                     'defaultValue'       => $translationItem->getDefaultValue(),
