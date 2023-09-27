@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Uc\TranslationAppSdk;
 
+use Google\Protobuf\Int32Value;
 use TranslationPackage\OrderBy;
 use Uc\TranslationAppSdk\Enums\ColumnEnum;
 use Uc\TranslationAppSdk\Enums\OrderByEnum;
@@ -79,7 +80,9 @@ class TranslationAppClient
         $data = new TranslationItem();
 
         if ($valueObject->hasTranslationId()) {
-            $data->setTranslationId($valueObject->getTranslationId());
+            $int32Value = new Int32Value();
+            $int32Value->setValue($valueObject->getTranslationId()); // Set the integer value
+            $data->setTranslationId($int32Value);
         }
 
         if ($valueObject->hasParams()) {
