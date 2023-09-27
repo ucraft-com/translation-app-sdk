@@ -108,7 +108,7 @@ class TranslationAppClient
                 'editor'             => $data->getEditor(),
                 'params'             => $data->getParams(),
                 'languageCode'       => $data->getLanguageCode(),
-                'translationId'      => $data->getTranslationId()
+                'translationId'      => $data->getTranslationId()?->getValue()
             ];
         }
 
