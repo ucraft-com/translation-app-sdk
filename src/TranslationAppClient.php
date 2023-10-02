@@ -6,8 +6,9 @@ namespace Uc\TranslationAppSdk;
 
 use Google\Protobuf\Int32Value;
 use TranslationPackage\OrderBy;
-use Uc\TranslationAppSdk\Enums\ColumnEnum;
-use Uc\TranslationAppSdk\Enums\OrderByEnum;
+
+use TranslationPackage\OrderByColumn;
+use TranslationPackage\OrderByDirection;
 use Uc\TranslationAppSdk\ValueObjects\TranslationItemValueObject;
 use Uc\TranslationAppSdk\ValueObjects\TranslationQueryValueObject;
 use TranslationPackage\TranslationClient;
@@ -39,8 +40,8 @@ class TranslationAppClient
 
         if ($inputOrder = $valueObject->getOrderBy()) {
             $orderBy = new OrderBy();
-            $orderBy->setColumn(ColumnEnum::tryFrom($inputOrder['column'])->value);
-            $orderBy->setOrder(OrderByEnum::tryFrom($inputOrder['order'])->value);
+            $orderBy->setColumn(OrderByColumn::value($inputOrder['column']));
+            $orderBy->setOrder(OrderByDirection::value($inputOrder['order']));
             $request->setOrderBy($orderBy);
         }
 
@@ -57,7 +58,7 @@ class TranslationAppClient
                     'value'              => $translationItem->getValue(),
                     'defaultValue'       => $translationItem->getDefaultValue(),
                     'updatedAt'          => $translationItem->getUpdatedAt(),
-                    'editor'             => $translationItem->getEditor(),
+                    'editorName'         => $translationItem->getEditorName(),
                     'params'             => $translationItem->getParams(),
                     'languageCode'       => $translationItem->getLanguageCode(),
                     'translationEntryId' => $translationItem->getTranslationEntryId(),
@@ -75,7 +76,7 @@ class TranslationAppClient
      *
      * @return array
      */
-    public function updateOrCreate(TranslationItemValueObject $valueObject): array
+    public function upsert(TranslationItemValueObject $valueObject): array
     {
         $data = new TranslationItem();
 
@@ -90,14 +91,13 @@ class TranslationAppClient
         }
 
         $data->setValue($valueObject->getValue());
-        $data->setUpdatedAt($valueObject->getUpdatedAt());
-        $data->setEditor($valueObject->getEditor());
+        $data->setEditorName($valueObject->getEditorName());
         $data->setLanguageCode($valueObject->getLanguageCode());
         $data->setResource($valueObject->getResource());
         $data->setResourceId($valueObject->getResourceId());
         $data->setTranslationEntryId($valueObject->getTranslationEntryId());
 
-        [$data, $metadata] = $this->client->UpdateTranslation($data)->wait();
+        [$data, $metadata] = $this->client->UpsertTranslation($data)->wait();
         $processedData = null;
 
         if ($data) {
@@ -105,7 +105,7 @@ class TranslationAppClient
                 'translationEntryId' => $data->getTranslationEntryId(),
                 'value'              => $data->getValue(),
                 'updatedAt'          => $data->getUpdatedAt(),
-                'editor'             => $data->getEditor(),
+                'editorName'         => $data->getEditorName(),
                 'params'             => $data->getParams(),
                 'languageCode'       => $data->getLanguageCode(),
                 'translationId'      => $data->getTranslationId()?->getValue()

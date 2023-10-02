@@ -9,12 +9,12 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>translationPackage.TranslationItems</code>
+ * Generated from protobuf message <code>TranslationPackage.TranslationItems</code>
  */
 class TranslationItems extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated .translationPackage.TranslationItem items = 1;</code>
+     * Generated from protobuf field <code>repeated .TranslationPackage.TranslationItem items = 1;</code>
      */
     private $items;
     /**
@@ -38,7 +38,7 @@ class TranslationItems extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .translationPackage.TranslationItem items = 1;</code>
+     * Generated from protobuf field <code>repeated .TranslationPackage.TranslationItem items = 1;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getItems()
@@ -47,7 +47,7 @@ class TranslationItems extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .translationPackage.TranslationItem items = 1;</code>
+     * Generated from protobuf field <code>repeated .TranslationPackage.TranslationItem items = 1;</code>
      * @param \TranslationPackage\TranslationItem[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

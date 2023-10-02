@@ -9,11 +9,10 @@ class TranslationItemValueObject
     public function __construct(
         protected readonly string $value,
         protected readonly string $languageCode,
-        protected readonly string $updatedAt,
         protected readonly string $translationEntryId,
         protected readonly string $resource,
         protected readonly int $resourceId,
-        protected readonly string $editor,
+        protected readonly string $editorName,
         protected readonly ?int $translationId,
         protected readonly ?array $params,
     ) {
@@ -46,17 +45,9 @@ class TranslationItemValueObject
     /**
      * @return string
      */
-    public function getUpdatedAt(): string
+    public function getEditorName(): string
     {
-        return $this->updatedAt;
-    }
-
-    /**
-     * @return string
-     */
-    public function getEditor(): string
-    {
-        return $this->editor;
+        return $this->editorName;
     }
 
     /**

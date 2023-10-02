@@ -22,9 +22,9 @@ class TranslationClient extends \Grpc\BaseStub {
      * @param array $options call options
      * @return \Grpc\UnaryCall
      */
-    public function UpdateTranslation(\TranslationPackage\TranslationItem $argument,
+    public function UpsertTranslation(\TranslationPackage\TranslationItem $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/translationPackage.Translation/UpdateTranslation',
+        return $this->_simpleRequest('/TranslationPackage.Translation/UpsertTranslation',
         $argument,
         ['\TranslationPackage\TranslationItem', 'decode'],
         $metadata, $options);
@@ -38,7 +38,7 @@ class TranslationClient extends \Grpc\BaseStub {
      */
     public function GetTranslations(\TranslationPackage\TranslationQuery $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/translationPackage.Translation/GetTranslations',
+        return $this->_simpleRequest('/TranslationPackage.Translation/GetTranslations',
         $argument,
         ['\TranslationPackage\TranslationItems', 'decode'],
         $metadata, $options);

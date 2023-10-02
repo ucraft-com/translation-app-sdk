@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>translationPackage.TranslationQuery</code>
+ * Generated from protobuf message <code>TranslationPackage.TranslationQuery</code>
  */
 class TranslationQuery extends \Google\Protobuf\Internal\Message
 {
@@ -22,9 +22,9 @@ class TranslationQuery extends \Google\Protobuf\Internal\Message
      */
     protected $resource = '';
     /**
-     * Generated from protobuf field <code>string resource_id = 3;</code>
+     * Generated from protobuf field <code>int32 resource_id = 3;</code>
      */
-    protected $resource_id = '';
+    protected $resource_id = 0;
     /**
      * Generated from protobuf field <code>int32 page = 4;</code>
      */
@@ -38,7 +38,7 @@ class TranslationQuery extends \Google\Protobuf\Internal\Message
      */
     protected $key = '';
     /**
-     * Generated from protobuf field <code>.translationPackage.OrderBy order_by = 7;</code>
+     * Generated from protobuf field <code>.TranslationPackage.OrderBy order_by = 7;</code>
      */
     protected $order_by = null;
 
@@ -50,7 +50,7 @@ class TranslationQuery extends \Google\Protobuf\Internal\Message
      *
      *     @type string $language_code
      *     @type string $resource
-     *     @type string $resource_id
+     *     @type int $resource_id
      *     @type int $page
      *     @type int $first
      *     @type string $key
@@ -107,8 +107,8 @@ class TranslationQuery extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string resource_id = 3;</code>
-     * @return string
+     * Generated from protobuf field <code>int32 resource_id = 3;</code>
+     * @return int
      */
     public function getResourceId()
     {
@@ -116,13 +116,13 @@ class TranslationQuery extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string resource_id = 3;</code>
-     * @param string $var
+     * Generated from protobuf field <code>int32 resource_id = 3;</code>
+     * @param int $var
      * @return $this
      */
     public function setResourceId($var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkInt32($var);
         $this->resource_id = $var;
 
         return $this;
@@ -195,7 +195,7 @@ class TranslationQuery extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.translationPackage.OrderBy order_by = 7;</code>
+     * Generated from protobuf field <code>.TranslationPackage.OrderBy order_by = 7;</code>
      * @return \TranslationPackage\OrderBy
      */
     public function getOrderBy()
@@ -204,7 +204,7 @@ class TranslationQuery extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.translationPackage.OrderBy order_by = 7;</code>
+     * Generated from protobuf field <code>.TranslationPackage.OrderBy order_by = 7;</code>
      * @param \TranslationPackage\OrderBy $var
      * @return $this
      */

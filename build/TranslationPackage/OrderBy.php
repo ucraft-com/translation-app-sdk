@@ -9,18 +9,18 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>translationPackage.OrderBy</code>
+ * Generated from protobuf message <code>TranslationPackage.OrderBy</code>
  */
 class OrderBy extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string column = 1;</code>
+     * Generated from protobuf field <code>.TranslationPackage.OrderByColumn column = 1;</code>
      */
-    protected $column = '';
+    protected $column = 0;
     /**
-     * Generated from protobuf field <code>string order = 2;</code>
+     * Generated from protobuf field <code>.TranslationPackage.OrderByDirection order = 2;</code>
      */
-    protected $order = '';
+    protected $order = 0;
 
     /**
      * Constructor.
@@ -28,8 +28,8 @@ class OrderBy extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $column
-     *     @type string $order
+     *     @type int $column
+     *     @type int $order
      * }
      */
     public function __construct($data = NULL) {
@@ -38,8 +38,8 @@ class OrderBy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string column = 1;</code>
-     * @return string
+     * Generated from protobuf field <code>.TranslationPackage.OrderByColumn column = 1;</code>
+     * @return int
      */
     public function getColumn()
     {
@@ -47,21 +47,21 @@ class OrderBy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string column = 1;</code>
-     * @param string $var
+     * Generated from protobuf field <code>.TranslationPackage.OrderByColumn column = 1;</code>
+     * @param int $var
      * @return $this
      */
     public function setColumn($var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkEnum($var, \TranslationPackage\OrderByColumn::class);
         $this->column = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string order = 2;</code>
-     * @return string
+     * Generated from protobuf field <code>.TranslationPackage.OrderByDirection order = 2;</code>
+     * @return int
      */
     public function getOrder()
     {
@@ -69,13 +69,13 @@ class OrderBy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string order = 2;</code>
-     * @param string $var
+     * Generated from protobuf field <code>.TranslationPackage.OrderByDirection order = 2;</code>
+     * @param int $var
      * @return $this
      */
     public function setOrder($var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkEnum($var, \TranslationPackage\OrderByDirection::class);
         $this->order = $var;
 
         return $this;

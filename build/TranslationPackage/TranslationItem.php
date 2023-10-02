@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>translationPackage.TranslationItem</code>
+ * Generated from protobuf message <code>TranslationPackage.TranslationItem</code>
  */
 class TranslationItem extends \Google\Protobuf\Internal\Message
 {
@@ -34,9 +34,9 @@ class TranslationItem extends \Google\Protobuf\Internal\Message
      */
     protected $language_code = '';
     /**
-     * Generated from protobuf field <code>string editor = 6;</code>
+     * Generated from protobuf field <code>string editor_name = 6;</code>
      */
-    protected $editor = '';
+    protected $editor_name = '';
     /**
      * Generated from protobuf field <code>int32 translation_entry_id = 7;</code>
      */
@@ -69,7 +69,7 @@ class TranslationItem extends \Google\Protobuf\Internal\Message
      *     @type string $value
      *     @type string $default_value
      *     @type string $language_code
-     *     @type string $editor
+     *     @type string $editor_name
      *     @type int $translation_entry_id
      *     @type string $resource
      *     @type int $resource_id
@@ -216,23 +216,23 @@ class TranslationItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string editor = 6;</code>
+     * Generated from protobuf field <code>string editor_name = 6;</code>
      * @return string
      */
-    public function getEditor()
+    public function getEditorName()
     {
-        return $this->editor;
+        return $this->editor_name;
     }
 
     /**
-     * Generated from protobuf field <code>string editor = 6;</code>
+     * Generated from protobuf field <code>string editor_name = 6;</code>
      * @param string $var
      * @return $this
      */
-    public function setEditor($var)
+    public function setEditorName($var)
     {
         GPBUtil::checkString($var, True);
-        $this->editor = $var;
+        $this->editor_name = $var;
 
         return $this;
     }
