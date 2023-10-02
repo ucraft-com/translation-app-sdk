@@ -4,7 +4,10 @@ declare(strict_types=1);
 
 namespace Uc\TranslationAppSdk\ValueObjects;
 
-class TranslationItemValueObject
+/**
+ * UpsertTranslationItemValueObject holds values for upserting translation item.
+ */
+class UpsertTranslationItemValueObject
 {
     public function __construct(
         protected readonly string $value,

@@ -9,12 +9,15 @@ use TranslationPackage\OrderBy;
 
 use TranslationPackage\OrderByColumn;
 use TranslationPackage\OrderByDirection;
-use Uc\TranslationAppSdk\ValueObjects\TranslationItemValueObject;
-use Uc\TranslationAppSdk\ValueObjects\TranslationQueryValueObject;
+use Uc\TranslationAppSdk\ValueObjects\UpsertTranslationItemValueObject;
+use Uc\TranslationAppSdk\ValueObjects\QueryTranslationItemsValueObject;
 use TranslationPackage\TranslationClient;
 use TranslationPackage\TranslationItem;
 use TranslationPackage\TranslationQuery;
 
+/**
+ * TranslationAppClient is a client to work with rpc methods.
+ */
 class TranslationAppClient
 {
     public function __construct(protected TranslationClient $client)
@@ -24,11 +27,11 @@ class TranslationAppClient
     /**
      * Get paginated translations.
      *
-     * @param \Uc\TranslationAppSdk\ValueObjects\TranslationQueryValueObject $valueObject
+     * @param \Uc\TranslationAppSdk\ValueObjects\QueryTranslationItemsValueObject $valueObject
      *
      * @return array
      */
-    public function getTranslations(TranslationQueryValueObject $valueObject): array
+    public function getTranslations(QueryTranslationItemsValueObject $valueObject): array
     {
         $request = new TranslationQuery();
         $request->setResourceId($valueObject->getResourceId());
@@ -72,11 +75,11 @@ class TranslationAppClient
     /**
      * Update translation if id exists, or create new one.
      *
-     * @param \Uc\TranslationAppSdk\ValueObjects\TranslationItemValueObject $valueObject
+     * @param \Uc\TranslationAppSdk\ValueObjects\UpsertTranslationItemValueObject $valueObject
      *
      * @return array
      */
-    public function upsert(TranslationItemValueObject $valueObject): array
+    public function upsert(UpsertTranslationItemValueObject $valueObject): array
     {
         $data = new TranslationItem();
 

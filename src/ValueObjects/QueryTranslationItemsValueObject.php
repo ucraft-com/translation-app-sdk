@@ -4,7 +4,10 @@ declare(strict_types=1);
 
 namespace Uc\TranslationAppSdk\ValueObjects;
 
-class TranslationQueryValueObject
+/**
+ * QueryTranslationItemsValueObject holds values for querying translation items.
+ */
+class QueryTranslationItemsValueObject
 {
     public function __construct(
         protected readonly string $resource,
