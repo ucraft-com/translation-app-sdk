@@ -41,6 +41,10 @@ class TranslationQuery extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.TranslationPackage.OrderBy order_by = 7;</code>
      */
     protected $order_by = null;
+    /**
+     * Generated from protobuf field <code>bool find_all = 8;</code>
+     */
+    protected $find_all = false;
 
     /**
      * Constructor.
@@ -55,6 +59,7 @@ class TranslationQuery extends \Google\Protobuf\Internal\Message
      *     @type int $first
      *     @type string $key
      *     @type \TranslationPackage\OrderBy $order_by
+     *     @type bool $find_all
      * }
      */
     public function __construct($data = NULL) {
@@ -212,6 +217,28 @@ class TranslationQuery extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \TranslationPackage\OrderBy::class);
         $this->order_by = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool find_all = 8;</code>
+     * @return bool
+     */
+    public function getFindAll()
+    {
+        return $this->find_all;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool find_all = 8;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setFindAll($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->find_all = $var;
 
         return $this;
     }

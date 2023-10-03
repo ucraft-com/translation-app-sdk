@@ -40,6 +40,7 @@ class TranslationAppClient
         $request->setKey($valueObject->getKey());
         $request->setPage($valueObject->getPage());
         $request->setFirst($valueObject->getFirst());
+        $request->setFindAll($valueObject->getFindAll());
 
         if ($inputOrder = $valueObject->getOrderBy()) {
             $orderBy = new OrderBy();

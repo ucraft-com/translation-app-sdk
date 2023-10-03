@@ -17,7 +17,16 @@ class QueryTranslationItemsValueObject
         protected readonly array $orderBy = [],
         protected readonly int $page = 0,
         protected readonly int $first = 10,
+        protected readonly bool $findAll = false
     ){
+    }
+
+    /**
+     * @return bool
+     */
+    public function getFindAll(): bool
+    {
+        return $this->findAll;
     }
 
     /**
