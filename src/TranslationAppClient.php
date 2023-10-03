@@ -40,7 +40,6 @@ class TranslationAppClient
         $request->setKey($valueObject->getKey());
         $request->setPage($valueObject->getPage());
         $request->setFirst($valueObject->getFirst());
-        $request->setFindAll($valueObject->getFindAll());
 
         if ($inputOrder = $valueObject->getOrderBy()) {
             $orderBy = new OrderBy();
@@ -71,6 +70,38 @@ class TranslationAppClient
         }
 
         return ['data' => $processedData, 'total' => $data?->getTotal() ?? 0, 'metadata' => $metadata];
+    }
+
+    /**
+     * Find all translations, without pagination.
+     *
+     * @param \Uc\TranslationAppSdk\ValueObjects\QueryTranslationItemsValueObject $valueObject
+     *
+     * @return array
+     */
+    public function findAll(QueryTranslationItemsValueObject $valueObject): array
+    {
+        $request = new TranslationQuery();
+        $request->setResourceId($valueObject->getResourceId());
+        $request->setResource($valueObject->getResource());
+        $request->setLanguageCode($valueObject->getLanguageCode());
+        $request->setFindAll($valueObject->getFindAll());
+
+        [$data, $metadata] = $this->client->getTranslations($request)->wait();
+
+        $processedData = [];
+
+        if ($data) {
+            /** @var TranslationItem $translationItem */
+            foreach ($data->getItems() as $translationItem) {
+                $processedData[] = [
+                    'key'   => $translationItem->getKey(),
+                    'value' => $translationItem->getValue(),
+                ];
+            }
+        }
+
+        return ['data' => $processedData, 'metadata' => $metadata];
     }
 
     /**
