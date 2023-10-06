@@ -10,9 +10,9 @@ namespace Uc\TranslationAppSdk\ValueObjects;
 class QueryTranslationItemsValueObject
 {
     public function __construct(
-        protected readonly string $resource,
-        protected readonly int $resourceId,
         protected readonly string $languageCode,
+        protected readonly ?string $resource = null,
+        protected readonly ?int $resourceId = null,
         protected readonly ?string $key = null,
         protected readonly array $orderBy = [],
         protected readonly int $page = 0,
@@ -46,9 +46,9 @@ class QueryTranslationItemsValueObject
     }
 
     /**
-     * @return int
+     * @return int|null
      */
-    public function getResourceId(): int
+    public function getResourceId(): ?int
     {
         return $this->resourceId;
     }
@@ -62,9 +62,9 @@ class QueryTranslationItemsValueObject
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getResource(): string
+    public function getResource(): ?string
     {
         return $this->resource;
     }

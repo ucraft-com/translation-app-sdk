@@ -13,26 +13,26 @@ class UpsertTranslationItemValueObject
         protected readonly string $value,
         protected readonly string $languageCode,
         protected readonly string $translationEntryId,
-        protected readonly string $resource,
-        protected readonly int $resourceId,
         protected readonly string $editorName,
+        protected readonly ?string $resource,
+        protected readonly ?int $resourceId,
         protected readonly ?int $translationId,
         protected readonly ?array $params,
     ) {
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getResource(): string
+    public function getResource(): ?string
     {
         return $this->resource;
     }
 
     /**
-     * @return int
+     * @return int|null
      */
-    public function getResourceId(): int
+    public function getResourceId(): ?int
     {
         return $this->resourceId;
     }
