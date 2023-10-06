@@ -6,7 +6,6 @@ namespace Uc\TranslationAppSdk;
 
 use Google\Protobuf\Int32Value;
 use TranslationPackage\OrderBy;
-
 use TranslationPackage\OrderByColumn;
 use TranslationPackage\OrderByDirection;
 use Uc\TranslationAppSdk\ValueObjects\UpsertTranslationItemValueObject;
@@ -125,11 +124,17 @@ class TranslationAppClient
             $data->setParams($valueObject->getParams());
         }
 
+        if ($valueObject->hasResource()) {
+            $data->setResource($valueObject->getResource());
+        }
+
+        if ($valueObject->getResourceId()) {
+            $data->setResourceId($valueObject->getResourceId());
+        }
+
         $data->setValue($valueObject->getValue());
         $data->setEditorName($valueObject->getEditorName());
         $data->setLanguageCode($valueObject->getLanguageCode());
-        $data->setResource($valueObject->getResource());
-        $data->setResourceId($valueObject->getResourceId());
         $data->setTranslationEntryId($valueObject->getTranslationEntryId());
 
         [$data, $metadata] = $this->client->UpsertTranslation($data)->wait();

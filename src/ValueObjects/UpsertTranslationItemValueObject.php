@@ -30,11 +30,27 @@ class UpsertTranslationItemValueObject
     }
 
     /**
+     * @return bool
+     */
+    public function hasResource(): bool
+    {
+        return !empty($this->hasResource());
+    }
+
+    /**
      * @return int|null
      */
     public function getResourceId(): ?int
     {
         return $this->resourceId;
+    }
+
+    /**
+     * @return bool
+     */
+    public function hasResourceId(): bool
+    {
+        return !empty($this->getResourceId());
     }
 
     /**
