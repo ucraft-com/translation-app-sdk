@@ -34,7 +34,7 @@ class UpsertTranslationItemValueObject
      */
     public function hasResource(): bool
     {
-        return !empty($this->hasResource());
+        return !empty($this->getResource());
     }
 
     /**
