@@ -93,10 +93,7 @@ class TranslationAppClient
         if ($data) {
             /** @var TranslationItem $translationItem */
             foreach ($data->getItems() as $translationItem) {
-                $processedData[] = [
-                    'key'   => $translationItem->getKey(),
-                    'value' => $translationItem->getValue(),
-                ];
+                $processedData[$translationItem->getKey()] = $translationItem->getValue();
             }
         }
 
