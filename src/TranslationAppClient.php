@@ -47,7 +47,7 @@ class TranslationAppClient
             $request->setOrderBy($orderBy);
         }
 
-        [$data, $metadata] = $this->client->getTranslations($request)->wait();
+        [$data, $metadata] = $this->client->GetTranslations($request)->wait();
 
         $processedData = [];
 
@@ -86,7 +86,7 @@ class TranslationAppClient
         $request->setLanguageCode($valueObject->getLanguageCode());
         $request->setFindAll($valueObject->getFindAll());
 
-        [$data, $metadata] = $this->client->getTranslations($request)->wait();
+        [$data, $metadata] = $this->client->GetTranslations($request)->wait();
 
         $processedData = [];
 
