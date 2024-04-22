@@ -12,7 +12,7 @@ class UpsertTranslationItemValueObject
     public function __construct(
         protected readonly string $value,
         protected readonly string $languageCode,
-        protected readonly string $translationEntryId,
+        protected readonly string $key,
         protected readonly string $editorName,
         protected readonly ?string $resource,
         protected readonly ?int $resourceId,
@@ -56,9 +56,9 @@ class UpsertTranslationItemValueObject
     /**
      * @return string
      */
-    public function getTranslationEntryId(): string
+    public function getKey(): string
     {
-        return $this->translationEntryId;
+        return $this->key;
     }
 
     /**

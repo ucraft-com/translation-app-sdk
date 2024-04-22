@@ -67,7 +67,7 @@ $upsertObject = new UpsertTranslationItemValueObject(
 // Accessing properties
 $resource = $upsertObject->getResource();
 $resourceId = $upsertObject->getResourceId();
-$translationEntryId = $upsertObject->getTranslationEntryId();
+$key = $upsertObject->getKey();
 $editorName = $upsertObject->getEditorName();
 $value = $upsertObject->getValue();
 $languageCode = $upsertObject->getLanguageCode();
