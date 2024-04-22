@@ -55,14 +55,14 @@ class TranslationAppClient
             /** @var TranslationItem $translationItem */
             foreach ($data->getItems() as $translationItem) {
                 $processedData[] = [
-                    'translationId' => $translationItem->getTranslationId()?->getValue(),
-                    'key'           => $translationItem->getKey(),
-                    'value'         => $translationItem->getValue(),
-                    'defaultValue'  => $translationItem->getDefaultValue(),
-                    'updatedAt'     => $translationItem->getUpdatedAt(),
-                    'editorName'    => $translationItem->getEditorName(),
-                    'params'        => $translationItem->getParams(),
-                    'languageCode'  => $translationItem->getLanguageCode(),
+                    'id'           => $translationItem->getId()?->getValue(),
+                    'key'          => $translationItem->getKey(),
+                    'value'        => $translationItem->getValue(),
+                    'defaultValue' => $translationItem->getDefaultValue(),
+                    'updatedAt'    => $translationItem->getUpdatedAt(),
+                    'editorName'   => $translationItem->getEditorName(),
+                    'params'       => $translationItem->getParams(),
+                    'languageCode' => $translationItem->getLanguageCode(),
                 ];
             }
         }
@@ -112,8 +112,8 @@ class TranslationAppClient
 
         if ($valueObject->hasTranslationId()) {
             $int32Value = new Int32Value();
-            $int32Value->setValue($valueObject->getTranslationId()); // Set the integer value
-            $data->setTranslationId($int32Value);
+            $int32Value->setValue($valueObject->getId()); // Set the integer value
+            $data->setId($int32Value);
         }
 
         if ($valueObject->hasParams()) {
@@ -138,13 +138,13 @@ class TranslationAppClient
 
         if ($data) {
             $processedData = [
-                'key'           => $data->getKey(),
-                'value'         => $data->getValue(),
-                'updatedAt'     => $data->getUpdatedAt(),
-                'editorName'    => $data->getEditorName(),
-                'params'        => $data->getParams(),
-                'languageCode'  => $data->getLanguageCode(),
-                'translationId' => $data->getTranslationId()?->getValue()
+                'key'          => $data->getKey(),
+                'value'        => $data->getValue(),
+                'updatedAt'    => $data->getUpdatedAt(),
+                'editorName'   => $data->getEditorName(),
+                'params'       => $data->getParams(),
+                'languageCode' => $data->getLanguageCode(),
+                'id'           => $data->getId()?->getValue()
             ];
         }
 

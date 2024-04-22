@@ -90,15 +90,15 @@ class UpsertTranslationItemValueObject
      */
     public function hasTranslationId(): bool
     {
-        return !empty($this->getTranslationId());
+        return !empty($this->getId());
     }
 
     /**
      * @return int|null
      */
-    public function getTranslationId(): ?int
+    public function getId(): ?int
     {
-        return $this->translationId;
+        return $this->id;
     }
 
     /**
