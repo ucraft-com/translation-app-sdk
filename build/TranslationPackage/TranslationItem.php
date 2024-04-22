@@ -38,10 +38,6 @@ class TranslationItem extends \Google\Protobuf\Internal\Message
      */
     protected $editor_name = '';
     /**
-     * Generated from protobuf field <code>int32 translation_entry_id = 7;</code>
-     */
-    protected $translation_entry_id = 0;
-    /**
      * Generated from protobuf field <code>string resource = 8;</code>
      */
     protected $resource = '';
@@ -70,7 +66,6 @@ class TranslationItem extends \Google\Protobuf\Internal\Message
      *     @type string $default_value
      *     @type string $language_code
      *     @type string $editor_name
-     *     @type int $translation_entry_id
      *     @type string $resource
      *     @type int $resource_id
      *     @type string $updated_at
@@ -233,28 +228,6 @@ class TranslationItem extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->editor_name = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>int32 translation_entry_id = 7;</code>
-     * @return int
-     */
-    public function getTranslationEntryId()
-    {
-        return $this->translation_entry_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>int32 translation_entry_id = 7;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setTranslationEntryId($var)
-    {
-        GPBUtil::checkInt32($var);
-        $this->translation_entry_id = $var;
 
         return $this;
     }

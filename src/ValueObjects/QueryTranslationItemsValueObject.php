@@ -13,7 +13,7 @@ class QueryTranslationItemsValueObject
         protected readonly string $languageCode,
         protected readonly ?string $resource = null,
         protected readonly ?int $resourceId = null,
-        protected readonly ?string $key = null,
+        protected readonly ?string $search = null,
         protected readonly array $orderBy = [],
         protected readonly int $page = 0,
         protected readonly int $first = 10,
@@ -40,9 +40,9 @@ class QueryTranslationItemsValueObject
     /**
      * @return string|null
      */
-    public function getKey(): ?string
+    public function getSearch(): ?string
     {
-        return $this->key;
+        return $this->search;
     }
 
     /**

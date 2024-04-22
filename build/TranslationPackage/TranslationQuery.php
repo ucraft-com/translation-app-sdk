@@ -34,9 +34,9 @@ class TranslationQuery extends \Google\Protobuf\Internal\Message
      */
     protected $first = 0;
     /**
-     * Generated from protobuf field <code>string key = 6;</code>
+     * Generated from protobuf field <code>string search = 6;</code>
      */
-    protected $key = '';
+    protected $search = '';
     /**
      * Generated from protobuf field <code>.TranslationPackage.OrderBy order_by = 7;</code>
      */
@@ -57,7 +57,7 @@ class TranslationQuery extends \Google\Protobuf\Internal\Message
      *     @type int $resource_id
      *     @type int $page
      *     @type int $first
-     *     @type string $key
+     *     @type string $search
      *     @type \TranslationPackage\OrderBy $order_by
      *     @type bool $find_all
      * }
@@ -178,23 +178,23 @@ class TranslationQuery extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string key = 6;</code>
+     * Generated from protobuf field <code>string search = 6;</code>
      * @return string
      */
-    public function getKey()
+    public function getSearch()
     {
-        return $this->key;
+        return $this->search;
     }
 
     /**
-     * Generated from protobuf field <code>string key = 6;</code>
+     * Generated from protobuf field <code>string search = 6;</code>
      * @param string $var
      * @return $this
      */
-    public function setKey($var)
+    public function setSearch($var)
     {
         GPBUtil::checkString($var, True);
-        $this->key = $var;
+        $this->search = $var;
 
         return $this;
     }
