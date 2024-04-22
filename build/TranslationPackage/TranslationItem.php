@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class TranslationItem extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.google.protobuf.Int32Value translation_id = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int32Value id = 1;</code>
      */
-    protected $translation_id = null;
+    protected $id = null;
     /**
      * Generated from protobuf field <code>string key = 2;</code>
      */
@@ -60,7 +60,7 @@ class TranslationItem extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Protobuf\Int32Value $translation_id
+     *     @type \Google\Protobuf\Int32Value $id
      *     @type string $key
      *     @type string $value
      *     @type string $default_value
@@ -78,34 +78,34 @@ class TranslationItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Int32Value translation_id = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int32Value id = 1;</code>
      * @return \Google\Protobuf\Int32Value
      */
-    public function getTranslationId()
+    public function getId()
     {
-        return $this->translation_id;
+        return $this->id;
     }
 
     /**
-     * Returns the unboxed value from <code>getTranslationId()</code>
+     * Returns the unboxed value from <code>getId()</code>
 
-     * Generated from protobuf field <code>.google.protobuf.Int32Value translation_id = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int32Value id = 1;</code>
      * @return int|null
      */
-    public function getTranslationIdUnwrapped()
+    public function getIdUnwrapped()
     {
-        return $this->readWrapperValue("translation_id");
+        return $this->readWrapperValue("id");
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Int32Value translation_id = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int32Value id = 1;</code>
      * @param \Google\Protobuf\Int32Value $var
      * @return $this
      */
-    public function setTranslationId($var)
+    public function setId($var)
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Int32Value::class);
-        $this->translation_id = $var;
+        $this->id = $var;
 
         return $this;
     }
@@ -113,13 +113,13 @@ class TranslationItem extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int32Value object.
 
-     * Generated from protobuf field <code>.google.protobuf.Int32Value translation_id = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int32Value id = 1;</code>
      * @param int|null $var
      * @return $this
      */
-    public function setTranslationIdUnwrapped($var)
+    public function setIdUnwrapped($var)
     {
-        $this->writeWrapperValue("translation_id", $var);
+        $this->writeWrapperValue("id", $var);
         return $this;}
 
     /**
