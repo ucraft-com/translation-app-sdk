@@ -128,6 +128,7 @@ class TranslationAppClient
             $data->setResourceId($valueObject->getResourceId());
         }
 
+        $data->setKey($valueObject->getKey());
         $data->setValue($valueObject->getValue());
         $data->setEditorName($valueObject->getEditorName());
         $data->setLanguageCode($valueObject->getLanguageCode());
@@ -137,6 +138,7 @@ class TranslationAppClient
 
         if ($data) {
             $processedData = [
+                'key'           => $data->getKey(),
                 'value'         => $data->getValue(),
                 'updatedAt'     => $data->getUpdatedAt(),
                 'editorName'    => $data->getEditorName(),
