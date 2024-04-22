@@ -36,7 +36,7 @@ class TranslationAppClient
         $request->setResourceId($valueObject->getResourceId());
         $request->setResource($valueObject->getResource());
         $request->setLanguageCode($valueObject->getLanguageCode());
-        $request->setKey($valueObject->getKey());
+        $request->setSearch($valueObject->getSearch());
         $request->setPage($valueObject->getPage());
         $request->setFirst($valueObject->getFirst());
 
@@ -55,15 +55,14 @@ class TranslationAppClient
             /** @var TranslationItem $translationItem */
             foreach ($data->getItems() as $translationItem) {
                 $processedData[] = [
-                    'translationId'      => $translationItem->getTranslationId()?->getValue(),
-                    'key'                => $translationItem->getKey(),
-                    'value'              => $translationItem->getValue(),
-                    'defaultValue'       => $translationItem->getDefaultValue(),
-                    'updatedAt'          => $translationItem->getUpdatedAt(),
-                    'editorName'         => $translationItem->getEditorName(),
-                    'params'             => $translationItem->getParams(),
-                    'languageCode'       => $translationItem->getLanguageCode(),
-                    'translationEntryId' => $translationItem->getTranslationEntryId(),
+                    'translationId' => $translationItem->getTranslationId()?->getValue(),
+                    'key'           => $translationItem->getKey(),
+                    'value'         => $translationItem->getValue(),
+                    'defaultValue'  => $translationItem->getDefaultValue(),
+                    'updatedAt'     => $translationItem->getUpdatedAt(),
+                    'editorName'    => $translationItem->getEditorName(),
+                    'params'        => $translationItem->getParams(),
+                    'languageCode'  => $translationItem->getLanguageCode(),
                 ];
             }
         }
@@ -132,20 +131,18 @@ class TranslationAppClient
         $data->setValue($valueObject->getValue());
         $data->setEditorName($valueObject->getEditorName());
         $data->setLanguageCode($valueObject->getLanguageCode());
-        $data->setTranslationEntryId($valueObject->getTranslationEntryId());
 
         [$data, $metadata] = $this->client->UpsertTranslation($data)->wait();
         $processedData = null;
 
         if ($data) {
             $processedData = [
-                'translationEntryId' => $data->getTranslationEntryId(),
-                'value'              => $data->getValue(),
-                'updatedAt'          => $data->getUpdatedAt(),
-                'editorName'         => $data->getEditorName(),
-                'params'             => $data->getParams(),
-                'languageCode'       => $data->getLanguageCode(),
-                'translationId'      => $data->getTranslationId()?->getValue()
+                'value'         => $data->getValue(),
+                'updatedAt'     => $data->getUpdatedAt(),
+                'editorName'    => $data->getEditorName(),
+                'params'        => $data->getParams(),
+                'languageCode'  => $data->getLanguageCode(),
+                'translationId' => $data->getTranslationId()?->getValue()
             ];
         }
 
