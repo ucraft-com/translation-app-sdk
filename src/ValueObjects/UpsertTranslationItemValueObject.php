@@ -16,7 +16,7 @@ class UpsertTranslationItemValueObject
         protected readonly string $editorName,
         protected readonly ?string $resource,
         protected readonly ?int $resourceId,
-        protected readonly ?int $translationId,
+        protected readonly ?int $id,
         protected readonly ?array $params,
     ) {
     }
@@ -88,7 +88,7 @@ class UpsertTranslationItemValueObject
     /**
      * @return bool
      */
-    public function hasTranslationId(): bool
+    public function hasId(): bool
     {
         return !empty($this->getId());
     }

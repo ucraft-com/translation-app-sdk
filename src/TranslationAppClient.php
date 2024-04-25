@@ -110,7 +110,7 @@ class TranslationAppClient
     {
         $data = new TranslationItem();
 
-        if ($valueObject->hasTranslationId()) {
+        if ($valueObject->hasId()) {
             $int32Value = new Int32Value();
             $int32Value->setValue($valueObject->getId()); // Set the integer value
             $data->setId($int32Value);
