@@ -17,7 +17,8 @@ class QueryTranslationItemsValueObject
         protected readonly array $orderBy = [],
         protected readonly int $page = 0,
         protected readonly int $first = 10,
-        protected readonly bool $findAll = false
+        protected readonly bool $findAll = false,
+        protected readonly ?int $group = null,
     ){
     }
 
@@ -27,6 +28,14 @@ class QueryTranslationItemsValueObject
     public function getFindAll(): bool
     {
         return $this->findAll;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getGroup(): ?int
+    {
+        return $this->group;
     }
 
     /**

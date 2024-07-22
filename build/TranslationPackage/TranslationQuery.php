@@ -45,6 +45,10 @@ class TranslationQuery extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool find_all = 8;</code>
      */
     protected $find_all = false;
+    /**
+     * Generated from protobuf field <code>.TranslationPackage.TranslationGroup group = 9;</code>
+     */
+    protected $group = 0;
 
     /**
      * Constructor.
@@ -60,6 +64,7 @@ class TranslationQuery extends \Google\Protobuf\Internal\Message
      *     @type string $search
      *     @type \TranslationPackage\OrderBy $order_by
      *     @type bool $find_all
+     *     @type int $group
      * }
      */
     public function __construct($data = NULL) {
@@ -239,6 +244,28 @@ class TranslationQuery extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->find_all = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.TranslationPackage.TranslationGroup group = 9;</code>
+     * @return int
+     */
+    public function getGroup()
+    {
+        return $this->group;
+    }
+
+    /**
+     * Generated from protobuf field <code>.TranslationPackage.TranslationGroup group = 9;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setGroup($var)
+    {
+        GPBUtil::checkEnum($var, \TranslationPackage\TranslationGroup::class);
+        $this->group = $var;
 
         return $this;
     }
