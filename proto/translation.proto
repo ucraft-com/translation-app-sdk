@@ -1,4 +1,5 @@
 syntax = "proto3";
+
 import "google/protobuf/wrappers.proto";
 
 package TranslationPackage;
@@ -51,7 +52,7 @@ enum OrderByDirection {
 }
 
 enum TranslationGroup {
-    UNSPECIFIED_GROUP= 0; // in case of 0 it is not sending data, this field is skipping 0 value
+    UNSPECIFIED_GROUP = 0; // in case of 0 it is not sending data, this field is skipping 0 value
     DEFAULTS = 1;
     CHECKOUT = 2;
 }
