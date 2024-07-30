@@ -18,7 +18,7 @@ class QueryTranslationItemsValueObject
         protected readonly int $page = 0,
         protected readonly int $first = 10,
         protected readonly bool $findAll = false,
-        protected readonly ?int $group = null,
+        protected readonly int $group = 1,
     ){
     }
 
@@ -31,9 +31,9 @@ class QueryTranslationItemsValueObject
     }
 
     /**
-     * @return int|null
+     * @return int
      */
-    public function getGroup(): ?int
+    public function getGroup(): int
     {
         return $this->group;
     }

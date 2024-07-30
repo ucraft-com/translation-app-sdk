@@ -4,7 +4,7 @@
     "type": "library",
     "license": "MIT",
     "require": {
-        "php": ">=8.1",
+        "php": ">=8.2",
         "grpc/grpc": "^1.52",
         "ext-grpc": "*",
         "google/protobuf": "^3.17"
