@@ -46,9 +46,9 @@ class TranslationQuery extends \Google\Protobuf\Internal\Message
      */
     protected $find_all = false;
     /**
-     * Generated from protobuf field <code>.TranslationPackage.TranslationGroup group = 9;</code>
+     * Generated from protobuf field <code>repeated .TranslationPackage.Group group = 9;</code>
      */
-    protected $group = 0;
+    private $group;
 
     /**
      * Constructor.
@@ -64,7 +64,7 @@ class TranslationQuery extends \Google\Protobuf\Internal\Message
      *     @type string $search
      *     @type \TranslationPackage\OrderBy $order_by
      *     @type bool $find_all
-     *     @type int $group
+     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $group
      * }
      */
     public function __construct($data = NULL) {
@@ -249,8 +249,8 @@ class TranslationQuery extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.TranslationPackage.TranslationGroup group = 9;</code>
-     * @return int
+     * Generated from protobuf field <code>repeated .TranslationPackage.Group group = 9;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getGroup()
     {
@@ -258,14 +258,14 @@ class TranslationQuery extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.TranslationPackage.TranslationGroup group = 9;</code>
-     * @param int $var
+     * Generated from protobuf field <code>repeated .TranslationPackage.Group group = 9;</code>
+     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setGroup($var)
     {
-        GPBUtil::checkEnum($var, \TranslationPackage\TranslationGroup::class);
-        $this->group = $var;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \TranslationPackage\Group::class);
+        $this->group = $arr;
 
         return $this;
     }
