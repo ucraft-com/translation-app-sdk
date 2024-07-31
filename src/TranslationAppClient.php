@@ -84,7 +84,7 @@ class TranslationAppClient
         $request->setResource($valueObject->getResource());
         $request->setLanguageCode($valueObject->getLanguageCode());
         $request->setFindAll($valueObject->getFindAll());
-        $request->setGroup($valueObject->getGroup());
+        $request->setGroups($valueObject->getGroups());
 
         [$data, $metadata] = $this->client->GetTranslations($request)->wait();
 

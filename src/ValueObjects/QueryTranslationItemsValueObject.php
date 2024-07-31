@@ -18,7 +18,7 @@ class QueryTranslationItemsValueObject
         protected readonly int $page = 0,
         protected readonly int $first = 10,
         protected readonly bool $findAll = false,
-        protected readonly array $group = [],
+        protected readonly array $groups = [],
     ){
     }
 
@@ -33,9 +33,9 @@ class QueryTranslationItemsValueObject
     /**
      * @return array
      */
-    public function getGroup(): array
+    public function getGroups(): array
     {
-        return $this->group;
+        return $this->groups;
     }
 
     /**
