@@ -1,5 +1,4 @@
 syntax = "proto3";
-
 import "google/protobuf/wrappers.proto";
 
 package TranslationPackage;
@@ -7,6 +6,13 @@ package TranslationPackage;
 service Translation {
     rpc UpsertTranslation (TranslationItem) returns (TranslationItem);
     rpc GetTranslations (TranslationQuery) returns (TranslationItems);
+    rpc PutAppTranslations (AppTranslation) returns (.google.protobuf.BoolValue);
+}
+
+message AppTranslation {
+    int32 app_id = 1;
+    string version = 2;
+    repeated string data = 3;
 }
 
 message TranslationQuery {
