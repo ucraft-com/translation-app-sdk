@@ -19,6 +19,7 @@ class QueryTranslationItemsValueObject
         protected readonly int $first = 10,
         protected readonly bool $findAll = false,
         protected readonly array $groups = [],
+        protected readonly array $appTranslations = [],
     ){
     }
 
@@ -36,6 +37,14 @@ class QueryTranslationItemsValueObject
     public function getGroups(): array
     {
         return $this->groups;
+    }
+
+    /**
+     * @return array
+     */
+    public function getAppTranslations(): array
+    {
+        return $this->appTranslations;
     }
 
     /**

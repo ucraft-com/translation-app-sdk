@@ -49,6 +49,10 @@ class TranslationQuery extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .TranslationPackage.Group groups = 9;</code>
      */
     private $groups;
+    /**
+     * Generated from protobuf field <code>repeated .TranslationPackage.AppTranslation appTranslations = 10;</code>
+     */
+    private $appTranslations;
 
     /**
      * Constructor.
@@ -65,6 +69,7 @@ class TranslationQuery extends \Google\Protobuf\Internal\Message
      *     @type \TranslationPackage\OrderBy $order_by
      *     @type bool $find_all
      *     @type int[]|\Google\Protobuf\Internal\RepeatedField $groups
+     *     @type \TranslationPackage\AppTranslation[]|\Google\Protobuf\Internal\RepeatedField $appTranslations
      * }
      */
     public function __construct($data = NULL) {
@@ -266,6 +271,28 @@ class TranslationQuery extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \TranslationPackage\Group::class);
         $this->groups = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .TranslationPackage.AppTranslation appTranslations = 10;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getAppTranslations()
+    {
+        return $this->appTranslations;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .TranslationPackage.AppTranslation appTranslations = 10;</code>
+     * @param \TranslationPackage\AppTranslation[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setAppTranslations($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \TranslationPackage\AppTranslation::class);
+        $this->appTranslations = $arr;
 
         return $this;
     }
