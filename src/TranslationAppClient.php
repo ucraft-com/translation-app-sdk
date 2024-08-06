@@ -5,11 +5,9 @@ declare(strict_types=1);
 namespace Uc\TranslationAppSdk;
 
 use Google\Protobuf\Int32Value;
-use TranslationPackage\AppTranslation;
 use TranslationPackage\OrderBy;
 use TranslationPackage\OrderByColumn;
 use TranslationPackage\OrderByDirection;
-use Uc\TranslationAppSdk\ValueObjects\PutAppTranslationItemValueObject;
 use Uc\TranslationAppSdk\ValueObjects\UpsertTranslationItemValueObject;
 use Uc\TranslationAppSdk\ValueObjects\QueryTranslationItemsValueObject;
 use TranslationPackage\TranslationClient;
@@ -41,6 +39,7 @@ class TranslationAppClient
         $request->setSearch($valueObject->getSearch());
         $request->setPage($valueObject->getPage());
         $request->setFirst($valueObject->getFirst());
+        $request->setAppTranslations($valueObject->getAppTranslations());
 
         if ($inputOrder = $valueObject->getOrderBy()) {
             $orderBy = new OrderBy();
@@ -87,6 +86,7 @@ class TranslationAppClient
         $request->setLanguageCode($valueObject->getLanguageCode());
         $request->setFindAll($valueObject->getFindAll());
         $request->setGroups($valueObject->getGroups());
+        $request->setAppTranslations($valueObject->getAppTranslations());
 
         [$data, $metadata] = $this->client->GetTranslations($request)->wait();
 
@@ -149,30 +149,6 @@ class TranslationAppClient
                 'languageCode' => $data->getLanguageCode(),
                 'id'           => $data->getId()?->getValue()
             ];
-        }
-
-        return ['data' => $processedData, 'metadata' => $metadata];
-    }
-
-    /**
-     * Put app translations.
-     *
-     * @param \Uc\TranslationAppSdk\ValueObjects\PutAppTranslationItemValueObject $valueObject
-     *
-     * @return array
-     */
-    public function putAppTranslations(PutAppTranslationItemValueObject $valueObject): array
-    {
-        $data = new AppTranslation();
-        $data->setAppId($valueObject->getAppId());
-        $data->setVersion($valueObject->getVersion());
-        $data->setData($valueObject->getData());
-
-        [$data, $metadata] = $this->client->PutAppTranslations($data)->wait();
-        $processedData = null;
-
-        if ($data) {
-            $processedData = true;
         }
 
         return ['data' => $processedData, 'metadata' => $metadata];
