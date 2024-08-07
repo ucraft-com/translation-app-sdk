@@ -18,7 +18,7 @@ message TranslationQuery {
     OrderBy order_by = 7;
     bool find_all = 8;
     repeated Group groups = 9;
-    repeated AppTranslation appTranslations = 10;
+    repeated App apps = 10;
 }
 
 message TranslationItem {
@@ -57,7 +57,7 @@ enum Group {
     CHECKOUT = 2;
 }
 
-message AppTranslation {
+message App {
     int32 appId = 1;
     string version = 2;
 }

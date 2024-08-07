@@ -19,7 +19,7 @@ class QueryTranslationItemsValueObject
         protected readonly int $first = 10,
         protected readonly bool $findAll = false,
         protected readonly array $groups = [],
-        protected readonly array $appTranslations = [],
+        protected readonly array $apps = [],
     ){
     }
 
@@ -42,9 +42,9 @@ class QueryTranslationItemsValueObject
     /**
      * @return array
      */
-    public function getAppTranslations(): array
+    public function getApps(): array
     {
-        return $this->appTranslations;
+        return $this->apps;
     }
 
     /**

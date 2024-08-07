@@ -39,7 +39,7 @@ class TranslationAppClient
         $request->setSearch($valueObject->getSearch());
         $request->setPage($valueObject->getPage());
         $request->setFirst($valueObject->getFirst());
-        $request->setAppTranslations($valueObject->getAppTranslations());
+        $request->setApps($valueObject->getApps());
 
         if ($inputOrder = $valueObject->getOrderBy()) {
             $orderBy = new OrderBy();
@@ -86,7 +86,7 @@ class TranslationAppClient
         $request->setLanguageCode($valueObject->getLanguageCode());
         $request->setFindAll($valueObject->getFindAll());
         $request->setGroups($valueObject->getGroups());
-        $request->setAppTranslations($valueObject->getAppTranslations());
+        $request->setApps($valueObject->getApps());
 
         [$data, $metadata] = $this->client->GetTranslations($request)->wait();
 

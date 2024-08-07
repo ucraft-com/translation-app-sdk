@@ -50,9 +50,9 @@ class TranslationQuery extends \Google\Protobuf\Internal\Message
      */
     private $groups;
     /**
-     * Generated from protobuf field <code>repeated .TranslationPackage.AppTranslation appTranslations = 10;</code>
+     * Generated from protobuf field <code>repeated .TranslationPackage.App apps = 10;</code>
      */
-    private $appTranslations;
+    private $apps;
 
     /**
      * Constructor.
@@ -69,7 +69,7 @@ class TranslationQuery extends \Google\Protobuf\Internal\Message
      *     @type \TranslationPackage\OrderBy $order_by
      *     @type bool $find_all
      *     @type int[]|\Google\Protobuf\Internal\RepeatedField $groups
-     *     @type \TranslationPackage\AppTranslation[]|\Google\Protobuf\Internal\RepeatedField $appTranslations
+     *     @type \TranslationPackage\App[]|\Google\Protobuf\Internal\RepeatedField $apps
      * }
      */
     public function __construct($data = NULL) {
@@ -276,23 +276,23 @@ class TranslationQuery extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .TranslationPackage.AppTranslation appTranslations = 10;</code>
+     * Generated from protobuf field <code>repeated .TranslationPackage.App apps = 10;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getAppTranslations()
+    public function getApps()
     {
-        return $this->appTranslations;
+        return $this->apps;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .TranslationPackage.AppTranslation appTranslations = 10;</code>
-     * @param \TranslationPackage\AppTranslation[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .TranslationPackage.App apps = 10;</code>
+     * @param \TranslationPackage\App[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setAppTranslations($var)
+    public function setApps($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \TranslationPackage\AppTranslation::class);
-        $this->appTranslations = $arr;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \TranslationPackage\App::class);
+        $this->apps = $arr;
 
         return $this;
     }
