@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class App extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>int32 appId = 1;</code>
+     * Generated from protobuf field <code>string appId = 1;</code>
      */
-    protected $appId = 0;
+    protected $appId = '';
     /**
      * Generated from protobuf field <code>string version = 2;</code>
      */
@@ -28,7 +28,7 @@ class App extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $appId
+     *     @type string $appId
      *     @type string $version
      * }
      */
@@ -38,8 +38,8 @@ class App extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 appId = 1;</code>
-     * @return int
+     * Generated from protobuf field <code>string appId = 1;</code>
+     * @return string
      */
     public function getAppId()
     {
@@ -47,13 +47,13 @@ class App extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 appId = 1;</code>
-     * @param int $var
+     * Generated from protobuf field <code>string appId = 1;</code>
+     * @param string $var
      * @return $this
      */
     public function setAppId($var)
     {
-        GPBUtil::checkInt32($var);
+        GPBUtil::checkString($var, True);
         $this->appId = $var;
 
         return $this;

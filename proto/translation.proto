@@ -58,7 +58,7 @@ enum Group {
 }
 
 message App {
-    int32 appId = 1;
+    string appId = 1;
     string version = 2;
 }
 
