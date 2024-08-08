@@ -21,6 +21,10 @@ class App extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string version = 2;</code>
      */
     protected $version = '';
+    /**
+     * Generated from protobuf field <code>string appName = 3;</code>
+     */
+    protected $appName = '';
 
     /**
      * Constructor.
@@ -30,6 +34,7 @@ class App extends \Google\Protobuf\Internal\Message
      *
      *     @type string $appId
      *     @type string $version
+     *     @type string $appName
      * }
      */
     public function __construct($data = NULL) {
@@ -77,6 +82,28 @@ class App extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->version = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string appName = 3;</code>
+     * @return string
+     */
+    public function getAppName()
+    {
+        return $this->appName;
+    }
+
+    /**
+     * Generated from protobuf field <code>string appName = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAppName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->appName = $var;
 
         return $this;
     }

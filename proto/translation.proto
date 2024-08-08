@@ -60,6 +60,7 @@ enum Group {
 message App {
     string appId = 1;
     string version = 2;
+    string appName = 3;
 }
 
 message TranslationItems {
