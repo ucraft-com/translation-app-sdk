@@ -7,17 +7,17 @@ namespace Uc\TranslationAppSdk\ValueObjects;
 /**
  * UpsertTranslationItemValueObject holds values for upserting translation item.
  */
-class UpsertTranslationItemValueObject
+readonly class UpsertTranslationItemValueObject
 {
     public function __construct(
-        protected readonly string $value,
-        protected readonly string $languageCode,
-        protected readonly string $key,
-        protected readonly string $editorName,
-        protected readonly ?string $resource,
-        protected readonly ?int $resourceId,
-        protected readonly ?int $id,
-        protected readonly ?array $params,
+        protected string $value,
+        protected string $languageCode,
+        protected string $key,
+        protected string $editorName,
+        protected ?string $resource,
+        protected ?int $resourceId,
+        protected ?int $id,
+        protected ?array $params,
     ) {
     }
 

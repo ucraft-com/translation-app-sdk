@@ -5,9 +5,11 @@ declare(strict_types=1);
 namespace Uc\TranslationAppSdk;
 
 use Google\Protobuf\Int32Value;
+use TranslationPackage\AppTranslation;
 use TranslationPackage\OrderBy;
 use TranslationPackage\OrderByColumn;
 use TranslationPackage\OrderByDirection;
+use Uc\TranslationAppSdk\ValueObjects\PutAppTranslationItemValueObject;
 use Uc\TranslationAppSdk\ValueObjects\UpsertTranslationItemValueObject;
 use Uc\TranslationAppSdk\ValueObjects\QueryTranslationItemsValueObject;
 use TranslationPackage\TranslationClient;
@@ -149,6 +151,30 @@ class TranslationAppClient
                 'languageCode' => $data->getLanguageCode(),
                 'id'           => $data->getId()?->getValue()
             ];
+        }
+
+        return ['data' => $processedData, 'metadata' => $metadata];
+    }
+
+    /**
+     * Put app translations.
+     *
+     * @param \Uc\TranslationAppSdk\ValueObjects\PutAppTranslationItemValueObject $valueObject
+     *
+     * @return array
+     */
+    public function putAppTranslations(PutAppTranslationItemValueObject $valueObject): array
+    {
+        $data = new AppTranslation();
+        $data->setAppId($valueObject->getAppId());
+        $data->setVersion($valueObject->getVersion());
+        $data->setData($valueObject->getData());
+
+        [$data, $metadata] = $this->client->PutAppTranslations($data)->wait();
+        $processedData = null;
+
+        if ($data) {
+            $processedData = true;
         }
 
         return ['data' => $processedData, 'metadata' => $metadata];

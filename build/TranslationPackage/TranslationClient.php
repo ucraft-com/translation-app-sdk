@@ -44,4 +44,18 @@ class TranslationClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * @param \TranslationPackage\AppTranslation $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PutAppTranslations(\TranslationPackage\AppTranslation $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/TranslationPackage.Translation/PutAppTranslations',
+        $argument,
+        ['\Google\Protobuf\BoolValue', 'decode'],
+        $metadata, $options);
+    }
+
 }

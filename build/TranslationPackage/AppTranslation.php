@@ -14,13 +14,17 @@ use Google\Protobuf\Internal\GPBUtil;
 class AppTranslation extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>int32 appId = 1;</code>
+     * Generated from protobuf field <code>int32 app_id = 1;</code>
      */
-    protected $appId = 0;
+    protected $app_id = 0;
     /**
      * Generated from protobuf field <code>string version = 2;</code>
      */
     protected $version = '';
+    /**
+     * Generated from protobuf field <code>repeated string data = 3;</code>
+     */
+    private $data;
 
     /**
      * Constructor.
@@ -28,8 +32,9 @@ class AppTranslation extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $appId
+     *     @type int $app_id
      *     @type string $version
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $data
      * }
      */
     public function __construct($data = NULL) {
@@ -38,23 +43,23 @@ class AppTranslation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 appId = 1;</code>
+     * Generated from protobuf field <code>int32 app_id = 1;</code>
      * @return int
      */
     public function getAppId()
     {
-        return $this->appId;
+        return $this->app_id;
     }
 
     /**
-     * Generated from protobuf field <code>int32 appId = 1;</code>
+     * Generated from protobuf field <code>int32 app_id = 1;</code>
      * @param int $var
      * @return $this
      */
     public function setAppId($var)
     {
         GPBUtil::checkInt32($var);
-        $this->appId = $var;
+        $this->app_id = $var;
 
         return $this;
     }
@@ -77,6 +82,28 @@ class AppTranslation extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->version = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string data = 3;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getData()
+    {
+        return $this->data;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string data = 3;</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setData($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->data = $arr;
 
         return $this;
     }

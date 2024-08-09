@@ -7,19 +7,19 @@ namespace Uc\TranslationAppSdk\ValueObjects;
 /**
  * QueryTranslationItemsValueObject holds values for querying translation items.
  */
-class QueryTranslationItemsValueObject
+readonly class QueryTranslationItemsValueObject
 {
     public function __construct(
-        protected readonly string $languageCode,
-        protected readonly ?string $resource = null,
-        protected readonly ?int $resourceId = null,
-        protected readonly ?string $search = null,
-        protected readonly array $orderBy = [],
-        protected readonly int $page = 0,
-        protected readonly int $first = 10,
-        protected readonly bool $findAll = false,
-        protected readonly array $groups = [],
-        protected readonly array $apps = [],
+        protected string $languageCode,
+        protected ?string $resource = null,
+        protected ?int $resourceId = null,
+        protected ?string $search = null,
+        protected array $orderBy = [],
+        protected int $page = 0,
+        protected int $first = 10,
+        protected bool $findAll = false,
+        protected array $groups = [],
+        protected array $apps = [],
     ){
     }
 
