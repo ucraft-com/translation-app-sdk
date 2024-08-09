@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Uc\TranslationAppSdk;
 
 use Google\Protobuf\Int32Value;
+use Google\Protobuf\Struct;
 use TranslationPackage\AppTranslation;
 use TranslationPackage\OrderBy;
 use TranslationPackage\OrderByColumn;
@@ -168,7 +169,7 @@ class TranslationAppClient
         $data = new AppTranslation();
         $data->setAppId($valueObject->getAppId());
         $data->setVersion($valueObject->getVersion());
-        $data->setData($valueObject->getData());
+        $data->setData(new Struct($valueObject->getData()));
 
         [$data, $metadata] = $this->client->PutAppTranslations($data)->wait();
         $processedData = null;
