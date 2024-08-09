@@ -22,9 +22,9 @@ class AppTranslation extends \Google\Protobuf\Internal\Message
      */
     protected $version = '';
     /**
-     * Generated from protobuf field <code>repeated string data = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Struct data = 3;</code>
      */
-    private $data;
+    protected $data = null;
 
     /**
      * Constructor.
@@ -34,7 +34,7 @@ class AppTranslation extends \Google\Protobuf\Internal\Message
      *
      *     @type string $appId
      *     @type string $version
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $data
+     *     @type \Google\Protobuf\Struct $data
      * }
      */
     public function __construct($data = NULL) {
@@ -87,8 +87,8 @@ class AppTranslation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated string data = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * Generated from protobuf field <code>.google.protobuf.Struct data = 3;</code>
+     * @return \Google\Protobuf\Struct
      */
     public function getData()
     {
@@ -96,14 +96,14 @@ class AppTranslation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated string data = 3;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>.google.protobuf.Struct data = 3;</code>
+     * @param \Google\Protobuf\Struct $var
      * @return $this
      */
     public function setData($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->data = $arr;
+        GPBUtil::checkMessage($var, \Google\Protobuf\Struct::class);
+        $this->data = $var;
 
         return $this;
     }

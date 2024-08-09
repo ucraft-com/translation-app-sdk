@@ -1,5 +1,6 @@
 syntax = "proto3";
 import "google/protobuf/wrappers.proto";
+import "google/protobuf/struct.proto";
 
 package TranslationPackage;
 
@@ -12,7 +13,7 @@ service Translation {
 message AppTranslation {
     string appId = 1;
     string version = 2;
-    repeated string data = 3;
+    google.protobuf.Struct data = 3;
 }
 
 message TranslationQuery {
