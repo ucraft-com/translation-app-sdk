@@ -12,7 +12,7 @@ readonly class PutAppTranslationItemValueObject
     public function __construct(
         protected string $appId,
         protected string $version,
-        protected array $data,
+        protected string $data,
     ) {
     }
 
@@ -33,9 +33,9 @@ readonly class PutAppTranslationItemValueObject
     }
 
     /**
-     * @return array
+     * @return string
      */
-    public function getData(): array
+    public function getData(): string
     {
         return $this->data;
     }

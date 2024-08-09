@@ -22,9 +22,9 @@ class AppTranslation extends \Google\Protobuf\Internal\Message
      */
     protected $version = '';
     /**
-     * Generated from protobuf field <code>.google.protobuf.Struct data = 3;</code>
+     * Generated from protobuf field <code>string data = 3;</code>
      */
-    protected $data = null;
+    protected $data = '';
 
     /**
      * Constructor.
@@ -34,7 +34,7 @@ class AppTranslation extends \Google\Protobuf\Internal\Message
      *
      *     @type string $appId
      *     @type string $version
-     *     @type \Google\Protobuf\Struct $data
+     *     @type string $data
      * }
      */
     public function __construct($data = NULL) {
@@ -87,8 +87,8 @@ class AppTranslation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Struct data = 3;</code>
-     * @return \Google\Protobuf\Struct
+     * Generated from protobuf field <code>string data = 3;</code>
+     * @return string
      */
     public function getData()
     {
@@ -96,13 +96,13 @@ class AppTranslation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Struct data = 3;</code>
-     * @param \Google\Protobuf\Struct $var
+     * Generated from protobuf field <code>string data = 3;</code>
+     * @param string $var
      * @return $this
      */
     public function setData($var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Struct::class);
+        GPBUtil::checkString($var, True);
         $this->data = $var;
 
         return $this;
