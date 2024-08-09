@@ -10,7 +10,7 @@ service Translation {
 }
 
 message AppTranslation {
-    int32 app_id = 1;
+    string appId = 1;
     string version = 2;
     repeated string data = 3;
 }

@@ -10,16 +10,16 @@ namespace Uc\TranslationAppSdk\ValueObjects;
 readonly class PutAppTranslationItemValueObject
 {
     public function __construct(
-        protected int $appId,
+        protected string $appId,
         protected string $version,
         protected array $data,
     ) {
     }
 
     /**
-     * @return int
+     * @return string
      */
-    public function getAppId(): int
+    public function getAppId(): string
     {
         return $this->appId;
     }
