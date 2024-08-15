@@ -18,11 +18,7 @@ class App extends \Google\Protobuf\Internal\Message
      */
     protected $appId = '';
     /**
-     * Generated from protobuf field <code>string version = 2;</code>
-     */
-    protected $version = '';
-    /**
-     * Generated from protobuf field <code>string appName = 3;</code>
+     * Generated from protobuf field <code>string appName = 2;</code>
      */
     protected $appName = '';
 
@@ -33,7 +29,6 @@ class App extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $appId
-     *     @type string $version
      *     @type string $appName
      * }
      */
@@ -65,29 +60,7 @@ class App extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string version = 2;</code>
-     * @return string
-     */
-    public function getVersion()
-    {
-        return $this->version;
-    }
-
-    /**
-     * Generated from protobuf field <code>string version = 2;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setVersion($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->version = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string appName = 3;</code>
+     * Generated from protobuf field <code>string appName = 2;</code>
      * @return string
      */
     public function getAppName()
@@ -96,7 +69,7 @@ class App extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string appName = 3;</code>
+     * Generated from protobuf field <code>string appName = 2;</code>
      * @param string $var
      * @return $this
      */

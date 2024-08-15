@@ -11,7 +11,6 @@ readonly class PutAppTranslationItemValueObject
 {
     public function __construct(
         protected string $appId,
-        protected string $version,
         protected string $data,
     ) {
     }
@@ -22,14 +21,6 @@ readonly class PutAppTranslationItemValueObject
     public function getAppId(): string
     {
         return $this->appId;
-    }
-
-    /**
-     * @return string
-     */
-    public function getVersion(): string
-    {
-        return $this->version;
     }
 
     /**

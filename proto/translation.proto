@@ -11,8 +11,7 @@ service Translation {
 
 message AppTranslation {
     string appId = 1;
-    string version = 2;
-    string data = 3;
+    string data = 2;
 }
 
 message TranslationQuery {
@@ -66,8 +65,7 @@ enum Group {
 
 message App {
     string appId = 1;
-    string version = 2;
-    string appName = 3;
+    string appName = 2;
 }
 
 message TranslationItems {

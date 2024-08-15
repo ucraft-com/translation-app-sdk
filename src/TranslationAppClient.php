@@ -167,7 +167,6 @@ class TranslationAppClient
     {
         $data = new AppTranslation();
         $data->setAppId($valueObject->getAppId());
-        $data->setVersion($valueObject->getVersion());
         $data->setData($valueObject->getData());
 
         [$data, $metadata] = $this->client->PutAppTranslations($data)->wait();
