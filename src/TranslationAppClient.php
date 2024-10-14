@@ -66,6 +66,7 @@ class TranslationAppClient
                     'editorName'   => $translationItem->getEditorName(),
                     'params'       => $translationItem->getParams(),
                     'languageCode' => $translationItem->getLanguageCode(),
+                    'group'        => $translationItem->getGroup(),
                 ];
             }
         }
@@ -129,8 +130,12 @@ class TranslationAppClient
             $data->setResource($valueObject->getResource());
         }
 
-        if ($valueObject->getResourceId()) {
+        if ($valueObject->hasResourceId()) {
             $data->setResourceId($valueObject->getResourceId());
+        }
+
+        if ($valueObject->hasGroup()) {
+            $data->setGroup($valueObject->getGroup());
         }
 
         $data->setKey($valueObject->getKey());
@@ -149,6 +154,7 @@ class TranslationAppClient
                 'editorName'   => $data->getEditorName(),
                 'params'       => $data->getParams(),
                 'languageCode' => $data->getLanguageCode(),
+                'group'        => $data->getGroup(),
                 'id'           => $data->getId()?->getValue()
             ];
         }

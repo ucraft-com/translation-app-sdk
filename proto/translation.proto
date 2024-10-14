@@ -31,9 +31,10 @@ message TranslationItem {
     google.protobuf.Int32Value id = 1;
     string key = 2;
     string value = 3;
-    string default_value = 4;
-    string language_code = 5;
-    string editor_name = 6;
+    Group group = 4;
+    string default_value = 5;
+    string language_code = 6;
+    string editor_name = 7;
     string resource = 8;
     int32 resource_id = 9;
     string updated_at = 10;

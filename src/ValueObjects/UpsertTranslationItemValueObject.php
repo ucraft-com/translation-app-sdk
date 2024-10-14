@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Uc\TranslationAppSdk\ValueObjects;
 
+use TranslationPackage\Group;
+
 /**
  * UpsertTranslationItemValueObject holds values for upserting translation item.
  */
@@ -18,6 +20,7 @@ readonly class UpsertTranslationItemValueObject
         protected ?int $resourceId,
         protected ?int $id,
         protected ?array $params,
+        protected ?int $group,
     ) {
     }
 
@@ -51,6 +54,22 @@ readonly class UpsertTranslationItemValueObject
     public function hasResourceId(): bool
     {
         return !empty($this->getResourceId());
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getGroup(): ?int
+    {
+        return $this->group;
+    }
+
+    /**
+     * @return bool
+     */
+    public function hasGroup(): bool
+    {
+        return !empty($this->getGroup());
     }
 
     /**

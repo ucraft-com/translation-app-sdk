@@ -26,15 +26,19 @@ class TranslationItem extends \Google\Protobuf\Internal\Message
      */
     protected $value = '';
     /**
-     * Generated from protobuf field <code>string default_value = 4;</code>
+     * Generated from protobuf field <code>.TranslationPackage.Group group = 4;</code>
+     */
+    protected $group = 0;
+    /**
+     * Generated from protobuf field <code>string default_value = 5;</code>
      */
     protected $default_value = '';
     /**
-     * Generated from protobuf field <code>string language_code = 5;</code>
+     * Generated from protobuf field <code>string language_code = 6;</code>
      */
     protected $language_code = '';
     /**
-     * Generated from protobuf field <code>string editor_name = 6;</code>
+     * Generated from protobuf field <code>string editor_name = 7;</code>
      */
     protected $editor_name = '';
     /**
@@ -63,6 +67,7 @@ class TranslationItem extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Int32Value $id
      *     @type string $key
      *     @type string $value
+     *     @type int $group
      *     @type string $default_value
      *     @type string $language_code
      *     @type string $editor_name
@@ -167,7 +172,29 @@ class TranslationItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string default_value = 4;</code>
+     * Generated from protobuf field <code>.TranslationPackage.Group group = 4;</code>
+     * @return int
+     */
+    public function getGroup()
+    {
+        return $this->group;
+    }
+
+    /**
+     * Generated from protobuf field <code>.TranslationPackage.Group group = 4;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setGroup($var)
+    {
+        GPBUtil::checkEnum($var, \TranslationPackage\Group::class);
+        $this->group = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string default_value = 5;</code>
      * @return string
      */
     public function getDefaultValue()
@@ -176,7 +203,7 @@ class TranslationItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string default_value = 4;</code>
+     * Generated from protobuf field <code>string default_value = 5;</code>
      * @param string $var
      * @return $this
      */
@@ -189,7 +216,7 @@ class TranslationItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string language_code = 5;</code>
+     * Generated from protobuf field <code>string language_code = 6;</code>
      * @return string
      */
     public function getLanguageCode()
@@ -198,7 +225,7 @@ class TranslationItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string language_code = 5;</code>
+     * Generated from protobuf field <code>string language_code = 6;</code>
      * @param string $var
      * @return $this
      */
@@ -211,7 +238,7 @@ class TranslationItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string editor_name = 6;</code>
+     * Generated from protobuf field <code>string editor_name = 7;</code>
      * @return string
      */
     public function getEditorName()
@@ -220,7 +247,7 @@ class TranslationItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string editor_name = 6;</code>
+     * Generated from protobuf field <code>string editor_name = 7;</code>
      * @param string $var
      * @return $this
      */
