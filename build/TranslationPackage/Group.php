@@ -25,11 +25,16 @@ class Group
      * Generated from protobuf enum <code>CHECKOUT = 2;</code>
      */
     const CHECKOUT = 2;
+    /**
+     * Generated from protobuf enum <code>MY_ACCOUNT = 3;</code>
+     */
+    const MY_ACCOUNT = 3;
 
     private static $valueToName = [
         self::UNSPECIFIED_GROUP => 'UNSPECIFIED_GROUP',
         self::DEFAULTS => 'DEFAULTS',
         self::CHECKOUT => 'CHECKOUT',
+        self::MY_ACCOUNT => 'MY_ACCOUNT',
     ];
 
     public static function name($value)

@@ -62,6 +62,7 @@ enum Group {
     UNSPECIFIED_GROUP= 0; // in case of 0 it is not sending data, this field is skipping 0 value
     DEFAULTS = 1;
     CHECKOUT = 2;
+    MY_ACCOUNT = 3;
 }
 
 message App {
